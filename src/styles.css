@@ -11,6 +11,7 @@ body{
     "."
     "footer";
     height:100%; 
+    background-color: white;
 }
 .top{
     background-color: #9c9c9c;
@@ -34,14 +35,16 @@ body{
     cursor: pointer;
 }
 
+.buttons:active {
+    background-color: #9c9c9c;
+    color: white;
+}
+
 .learn{
-    grid-area:learn;
-    border-right: 4px #00a9ed solid;
-    
+    grid-area:learn;    
 }
 .translate{
     grid-area:translate;
-    border-right: 4px #00a9ed solid;
 }
 .message{
     grid-area:message;
@@ -66,12 +69,15 @@ body{
     position: absolute;
     top:20vh;
     bottom:10vh;
-    background-color: #fff;
+    background-color: #00a9ed;
 
 }
 .flex{
     display:flex;
     grid-area:flex;
     margin-bottom:20px;
-    border: 4px #00a9ed solid;
+}
+
+.state h2 {
+    color: #00a9ed;
 }

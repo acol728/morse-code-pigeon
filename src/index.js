@@ -105,4 +105,3 @@ function changeState(state) {
 document.getElementById("learnButton").addEventListener("click", function() { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function() { changeState("translateState") });
 document.getElementById("messageButton").addEventListener("click", function() { changeState("messageState") });
-
