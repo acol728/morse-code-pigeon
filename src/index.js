@@ -46,42 +46,30 @@ const morseCode = {
     ")": "- . - - . -"
 }
 
-const numTranslation = {
-    zero: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9
-}
+const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 const translateEnglishToMorse = (input) => {
+    result = '';
     try {
-        result = "";
         input.toLowerCase().split("", input.length).forEach(function (element) {
-            try {
-                if (element == " ") {
+            if (isNaN(element)) {
+                result += morseCode[element] + "   ";
+            } else {
+                if (element === " ") {
                     result += "        ";
                 } else {
-                    result += morseCode[element] + "   ";
-                }
-            } catch (err) {
-                for (var value in numTranslation) {
-                    console.log(numTranslation[value]);
+                    result += morseCode[numberHelper[element]] + "   ";
                 }
             }
         });
-        return result;
     } catch (err) {
-        return "Error: invalid characters" + err;
+        result += "Error: invalid characters. " + err;
     }
+    return result;
 }
 
 const translateMorseToEnglish = (input) => {
+    result = '';
     try {
         result = "";
         input.foreach(function (element) {
@@ -90,9 +78,8 @@ const translateMorseToEnglish = (input) => {
     } catch (err) {
         return "Error: morse code not found for characters";
     }
+    return result;
 }
-
-//EVENT LISTENERS
 
 function changeState(state) {
     var states = document.getElementsByClassName("state")
@@ -102,7 +89,9 @@ function changeState(state) {
     document.getElementById(state).style.display = "block";
 }
 
-document.getElementById("learnButton").addEventListener("click", function() { changeState("learnState") });
-document.getElementById("translateButton").addEventListener("click", function() { changeState("translateState") });
-document.getElementById("messageButton").addEventListener("click", function() { changeState("messageState") });
+//EVENT LISTENERS
+
+document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
+document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
+document.getElementById("messageButton").addEventListener("click", function () { changeState("messageState") });
 
