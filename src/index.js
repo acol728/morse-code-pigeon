@@ -1,85 +1,109 @@
 const morseCode = {
-    "zero": "- - - - -",
-    "one": ".- - - -",
-    "two": ". . - - -",
-    "three": ". . . - -",
-    "four": ". . . . -",
-    "five": ". . . . .",
-    "six": "- . . . .",
-    "seven": "- - . . .",
-    "eight": "- - - . .",
-    "nine": "- - - - .",
-    "a": ". -",
-    "b": "- . . .",
-    "c": "- . - .",
-    "d": "- . .",
-    "e": ".",
-    "f": ". . - .",
-    "g": "- - .",
-    "h": ". . . .",
-    "i": ". .",
-    "j": ". - - -",
-    "k": "- . -",
-    "l": ". - . .",
-    "m": "- -",
-    "n": "- .",
-    "o": "- - -",
-    "p": ". - - .",
-    "q": "- - . -",
-    "r": ". - .",
-    "s": ". . .",
-    "t": "-",
-    "u": ". . -",
-    "v": ". . . -",
-    "w": ". - -",
-    "x": "- . . -",
-    "y": "- . - -",
-    "z": "- - . .",
-    ".": ". - . - . -",
-    ",": "- - . . - -",
-    "?": ". . - - . .",
-    "!": "- . - . - -",
-    "-": "- . . . . -",
-    "/": "- . . - .",
-    "@": ". - - . - .",
-    "(": "- . - - .",
-    ")": "- . - - . -"
+    "zero": "- - - - - ",
+    "one": ".- - - - ",
+    "two": ". . - - - ",
+    "three": ". . . - - ",
+    "four": ". . . . - ",
+    "five": ". . . . . ",
+    "six": "- . . . . ",
+    "seven": "- - . . . ",
+    "eight": "- - - . . ",
+    "nine": "- - - - . ",
+    "a": ". - ",
+    "b": "- . . . ",
+    "c": "- . - . ",
+    "d": "- . . ",
+    "e": ". ",
+    "f": ". . - . ",
+    "g": "- - . ",
+    "h": ". . . . ",
+    "i": ". . ",
+    "j": ". - - - ",
+    "k": "- . - ",
+    "l": ". - . . ",
+    "m": "- - ",
+    "n": "- . ",
+    "o": "- - - ",
+    "p": ". - - . ",
+    "q": "- - . - ",
+    "r": ". - . ",
+    "s": ". . . ",
+    "t": "- ",
+    "u": ". . - ",
+    "v": ". . . - ",
+    "w": ". - - ",
+    "x": "- . . - ",
+    "y": "- . - - ",
+    "z": "- - . . ",
+    ".": ". - . - . - ",
+    ",": "- - . . - - ",
+    "?": ". . - - . . ",
+    "!": "- . - . - - ",
+    "-": "- . . . . - ",
+    "/": "- . . - . ",
+    "@": ". - - . - . ",
+    "(": "- . - - . ",
+    ")": "- . - - . - ",
+    " ": "space"
 }
 
 const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 const translateEnglishToMorse = (input) => {
-    result = '';
+    let result = "";
     try {
         input.toLowerCase().split("", input.length).forEach(function (element) {
-            if (isNaN(element)) {
+            if (morseCode[element]) {
                 result += morseCode[element] + "   ";
+            } else if (element === " ") {
+                result += "        ";
+            } else if (numberHelper[element]) {
+                result += morseCode[numberHelper[element]] + "   ";
             } else {
-                if (element === " ") {
-                    result += "        ";
-                } else {
-                    result += morseCode[numberHelper[element]] + "   ";
-                }
+                throw "Character is not translatable to morse";
             }
         });
     } catch (err) {
-        result += "Error: invalid characters. " + err;
+        result = "Error: invalid character. " + err;
     }
     return result;
 }
 
-const translateMorseToEnglish = (input) => {
-    result = '';
-    try {
-        result = "";
-        input.foreach(function (element) {
-            result += element + "";
-        });
-    } catch (err) {
-        return "Error: morse code not found for characters";
-    }
-    return result;
-}
+// const translateMorseToEnglish = (input) => {
+//     let result = "";
+//     let morseArray = [];
+//     let currentChar = "";
+//     try {
+//         input.toString().split("", input.length).forEach(function (element) {
+//             if (element == "." || element == "-") {
+//                 currentChar += element;
+//             } else if (element == " ") {
+//                 morseArray.push(currentChar);
+//                 currentChar = "";
+//             } else if (element == "/") {
+//                 morseArray.push("space");
+//                 currentChar = "";
+//             } else {
+//                 throw "Character is not morse/does not follow input guide";
+//             }
+//         });
+//         morseArray.push(currentChar);
+//     } catch (err) {
+//         result = "Error: invalid character. " + err;
+//     }
+//     morseArray.forEach(function (element) {
+//         let newElement = "";
+//         for (let i = 0; i < element.length; i++) {
+//             if (element[i] !== " " && element[i] !== "/") {
+//                 newElement += element.toString().charAt(i) + " ";
+//             } else if (element[i] === "/") {
+//                 newElement += " ";
+//             }
+//         }
+//         result += Object.keys(morseCode).find(key => morseCode[key] === newElement);
+//     });
+//     return result;
+// }
 
 function changeState(state) {
     var states = document.getElementsByClassName("state")
