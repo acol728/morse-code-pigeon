@@ -91,3 +91,4 @@ const translateMorseToEnglish = (input) => {
         return "Error: morse code not found for characters";
     }
 }
+
