@@ -91,7 +91,7 @@ function changeState(state) {
 
 //EVENT LISTENERS
 
+document.getElementById("initialButton").addEventListener("click", function() {changeState("initialState")});
 document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
 document.getElementById("messageButton").addEventListener("click", function () { changeState("messageState") });
-
