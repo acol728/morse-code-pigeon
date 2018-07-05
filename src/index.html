@@ -11,29 +11,73 @@
 
 <body>
   <div id="container">
-    <div class="top">Morse Code Pigeon</div>
+    <div class="top" id="initialButton">Morse Code Pigeon</div>
 
     <div class="flex">
       <div class="learn buttons" id="learnButton">Learn</div>
       <div class="translate buttons" id="translateButton">Translate</div>
-      <div class="message buttons" id = "messageButton">Message</div>
+      <div class="message buttons" id="messageButton">Message</div>
 
     </div>
-    <div class = "state" id="initialState">
-      <h2>Initial State</h2>
-    </div>
-    
-    <div class = "state" id = "learnState" style = "display: none">
-      <div class="learnsection">
-        <div class="column-1 column-learning"><h3>Game1</h3> <p>Have fun kiddo</p></div>
-        <div class="column-2 column-learning"><h3>Game2</h3> <p>Have fun kiddo</p></div>
-        <div class="column-3 column-learning"><h3>Game3</h3> <p>Have fun kiddo</p></div>
+    <div class="state" id="initialState" style="color:black; font-size:18px;">
+      <div>
+        <h1 class="section-heading">About Morse Code</h1>
+        <p style="text-align:center;">Morse Code was developed in the 1830s and 1840s by Samuel Morse, with the first message sent in 1844.</p>
+        <p style="text-align:center;">It is a language comprised completely of dots and dashes, known as dits (pronounced with a silent “t”) and dahs.</p>
+        <p style="text-align:center;">While at first used visually, it soon turned into a primarily sound-based language, with dits and dahs represented
+          by short and long beeps.</p>
+      </div>
+      <div id="initial-flex">
+        <div class="initial-class-item">
+          <h1>Rules of Morse Code:</h1>
+          <ol>
+            <li>There should be no spaces between parts of a letter.</li>
+            <li>There should be one space between letters.</li>
+            <li>A space between words is represented by "/".</li>
+          </ol>
+          <h3>Example: "Hello World" in Morse Code is ".... . .-.. .-.. ---/.-- --- .-. .-.. -.."</h3>
+        </div>
+        <div class="initial-class-item">
+          <img src="https://files.slack.com/files-pri/TAY65C0G0-FBK8TDU9J/1200px-international_morse_code.svg__1_.png" alt="morse code key"
+            height="350px" width="300px">
+        </div>
       </div>
     </div>
     
-    <div class = "state" id = "translateState" style = "display: none">
-      <h2>Translate State</h2>
+    <div class = "state" id = "learnState" style = "display: none">
+
+      <div class="learnsection">
+        <div class="column-1 column-learning">
+          <h3>Beginner</h3>
+          <p>We will display a Morse Code LETTER on the screen and you have to enter its English equivalent.
+            <div class="circle" style="background-color:green;"></div>
+          </p>
+        </div>
+        <div class="column-2 column-learning">
+          <h3>Intermediate</h3>
+          <p>We will display a Morse Code WORD on the screen and you have to enter its English equivalent.
+              <div class="circle" style="background-color:yellow; margin-top:35px"></div>
+          </p>
+        </div>
+        <div class="column-3 column-learning">
+          <h3>Hard</h3>
+          <p>We will display a Morse Code SENTENCE on the screen and you have to enter its English equivalent.
+            <div class="circle" style="background-color:red;"></div>
+          </p>
+        </div>
+      </div>
     </div>
+
+    <div class="state" id="translateState" style="display: none">
+      <h2 class="section-heading">Translate Between English and Morse Code</h2>
+      <div id="translate-flex">
+        <textarea class="translate-item" placeholder="Enter English to translate to Morse Code" cols="45" rows="20" style="font-size:20px"></textarea>
+        <img class="translate-item" src="http://sweetclipart.com/multisite/sweetclipart/files/arrows_back_forward.png" alt="arrows"
+          height="100px" width="200px">
+        <textarea class="translate-item" placeholder="Enter Morse Code to translate to English" cols="45" rows="20" style="font-size:20px"></textarea>
+      </div>
+    </div>
+
     
     <div class = "state" id = "messageState" style = "display: none">
         <div class="chatbox">
@@ -69,8 +113,6 @@
           </div>
           
     </div>
-      
-    <div class="footer">Footer</div>
   </div>
 
 
