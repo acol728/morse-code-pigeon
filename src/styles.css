@@ -1,63 +1,79 @@
+body{
+    background-color: #D3D3D3;
+    font-family: verdana;
+}
 #container{
     display:grid;
     grid-template-areas:
     "top"
     "flex"
-    "content"
+    "."
     "footer";
     height:100%; 
 }
 .top{
-    background-color: red;
+    background-color: grey;
+    color: white;
     grid-area:top;
-    font-size:48px;
+    font-size:5vh;
     text-align:center;
-    margin-bottom: 5px;
+    margin-bottom: 1vh;
     width: 100%;
     
 }
 .buttons{
     font-size:30px;
     text-align:center;
-    padding:20px;
+    padding:2vh;
     height:5vh;
     flex-grow:1;
+    border: 1px white solid;
+    background-color: #009ad8;
+    color: white;
+
 }
+
+.buttons:hover {
+    background-color: #00a9ed;
+}
+
 .learn{
-    background-color: green;
     grid-area:learn;
     
 }
 .translate{
-    background-color: purple;
     grid-area:translate;
 }
 .message{
-    background-color: blue;
     grid-area:message;
 }
 .reference{
-    background-color: orange;
     grid-area:reference;  
 }
 .footer{
-    background-color: yellow;
+    background-color: grey;
+    color: white;
+    margin-top:2vh;
     grid-area:footer;
     font-size:48px;
     text-align:center;
-    margin-bottom:10%;
-    width: 100%;
+    position: absolute;
+    bottom:20px;
+    right: 10px;
+    left: 10px;
 }
 .content{
-    height:45vh;
-    background-color: black;
-    width:auto;
-    margin-bottom:20px;
+    background-color:white;
+    right: 10px;
+    left:10px;
+    position: absolute;
+    top:20vh;
+    bottom:10vh;
+
 }
 .flex{
     display:flex;
     grid-area:flex;
-    
-    border: 5px black solid;
+    border: 5px white solid;
     margin-bottom:20px;
 }
