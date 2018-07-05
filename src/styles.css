@@ -98,3 +98,14 @@ body{
     padding-bottom:50vh;
     background-color: brown;
 }
+.section-heading{
+    text-align:center;
+}
+#translate-flex{
+    display: flex;
+    justify-content: center;
+}
+.translate-item{
+    align-self: auto;
+    margin: auto;
+}
