@@ -95,3 +95,7 @@ document.getElementById("initialButton").addEventListener("click", function() {c
 document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
 document.getElementById("messageButton").addEventListener("click", function () { changeState("messageState") });
+
+document.getElementById("green").addEventListener("click", function() { changeState("greenState"); });
+document.getElementById("yellow").addEventListener("click", function() { changeState("yellowState") });
+document.getElementById("red").addEventListener("click", function() { changeState("redState") });
