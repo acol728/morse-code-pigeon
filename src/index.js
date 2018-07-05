@@ -102,7 +102,21 @@ function changeState(state) {
     document.getElementById(state).style.display = "block";
 }
 
+function addText(message) {
+    var soloMessage = document.getElementById("message");
+    var messages = document.getElementsByClassName("chatlogs");
+    var sent = "<p class='chat-message'>" + message + "</p>";
+
+    var style = "<div class='chat self'>" + sent + "</div>"
+  
+    $(".chatlogs").append(style);
+    soloMessage.value = "";
+
+    
+}
+
 document.getElementById("learnButton").addEventListener("click", function() { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function() { changeState("translateState") });
 document.getElementById("messageButton").addEventListener("click", function() { changeState("messageState") });
 
+document.getElementById("Sender").addEventListener("click", function() { addText(document.getElementById("message").value)})

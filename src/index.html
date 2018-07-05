@@ -3,7 +3,10 @@
 
 <head>
   <title>Morse Code Pigeon</title>
+  <link rel="stylesheet" href="chat.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 </head>
 
 <body>
@@ -21,7 +24,6 @@
     </div>
     
     <div class = "state" id = "learnState" style = "display: none">
-      <h2>Learn State</h2>
       <div class="learnsection">
         <div class="column-1 column-learning"><h3>Game1</h3> <p>Have fun kiddo</p></div>
         <div class="column-2 column-learning"><h3>Game2</h3> <p>Have fun kiddo</p></div>
@@ -34,11 +36,45 @@
     </div>
     
     <div class = "state" id = "messageState" style = "display: none">
-      <h2>Message State</h2>
+        <div class="chatbox">
+            <div class="chatlogs">
+        
+              <div class="chat friend">
+                
+                <p class="chat-message">What's up, Brother ..!!</p>	
+              </div>
+              <div class="chat self">
+                
+                <p class="chat-message">What's up ..!!</p>	
+              </div>
+              <div class="chat self">
+                
+                <p class="chat-message">I love morse Code</p>	
+              </div>
+              <div class="chat friend">
+                
+                <p class="chat-message">Me to brother</p>	
+              </div>
+              <div class="chat self">
+                <p class="chat-message">.</p>
+              </div>
+              <div class="chat friend">
+                <p class="chat-message">.</p>
+              </div>
+            </div>
+            <div class="chat-form">
+              <textarea id="message"></textarea>
+              <button id="Sender">Send</button>
+            </div>
+          </div>
+          
     </div>
       
     <div class="footer">Footer</div>
   </div>
+
+
+  
   <script src="index.js"></script>
 </body>
 

@@ -79,7 +79,7 @@ body{
 }
 .learnsection{
     display:flex;
-    margin: 5vh 15vh;
+    margin: 3vh  15vh 5vh 15vh;
     justify-content: space-between;
     text-align:center;
 }
