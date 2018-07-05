@@ -35,6 +35,7 @@ body{
 
 .buttons:hover {
     background-color: #00a9ed;
+
 }
 
 .learn{
@@ -76,4 +77,25 @@ body{
     grid-area:flex;
     border: 5px white solid;
     margin-bottom:20px;
+}
+.learnsection{
+    display:flex;
+    margin: 5vh 15vh;
+    justify-content: space-between;
+    text-align:center;
+}
+.column-1{
+    background-color:teal;
+}
+.column-2{
+    background-color:orange;
+}
+.column-3{
+    background-color:green;
+}
+.column-learning{
+    height:10vh;
+    width:40vh;
+    padding-bottom:50vh;
+    background-color: brown;
 }
