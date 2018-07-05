@@ -1,32 +1,45 @@
 <!doctype html>
 <html>
+
 <head>
   <title>Morse Code Pigeon</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div id="container">
-    <div class="top">Header</div>
+    <div class="top">Morse Code Pigeon</div>
 
-    
     <div class="flex">
-      <div class="learn buttons">Learn</div>
-      <div class="translate buttons">Translate</div>
-      <div class="message buttons">Message</div>
-      
+      <div class="learn buttons" id="learnButton">Learn</div>
+      <div class="translate buttons" id="translateButton">Translate</div>
+      <div class="message buttons" id = "messageButton">Message</div>
+
     </div>
-    <div class="content">
+    <div class = "state" id="initialState">
+      <h2>Initial State</h2>
+    </div>
+    
+    <div class = "state" id = "learnState" style = "display: none">
+      <h2>Learn State</h2>
       <div class="learnsection">
         <div class="column-1 column-learning"><h3>Game1</h3> <p>Have fun kiddo</p></div>
         <div class="column-2 column-learning"><h3>Game2</h3> <p>Have fun kiddo</p></div>
         <div class="column-3 column-learning"><h3>Game3</h3> <p>Have fun kiddo</p></div>
       </div>
     </div>
-
-      
     
+    <div class = "state" id = "translateState" style = "display: none">
+      <h2>Translate State</h2>
+    </div>
+    
+    <div class = "state" id = "messageState" style = "display: none">
+      <h2>Message State</h2>
+    </div>
+      
     <div class="footer">Footer</div>
   </div>
-  <script src = "index.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>

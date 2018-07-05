@@ -1,6 +1,7 @@
 body{
-    background-color: #D3D3D3;
-    font-family: verdana;
+    color: #fff;
+    font-family: Impact;
+    background-color: rgb(231, 231, 231);
 }
 #container{
     display:grid;
@@ -12,38 +13,37 @@ body{
     height:100%; 
 }
 .top{
-    background-color: grey;
-    color: white;
+    background-color: #9c9c9c;
     grid-area:top;
     font-size:5vh;
     text-align:center;
-    margin-bottom: 1vh;
-    width: 100%;
-    
+    margin-bottom: 1vh;    
 }
 .buttons{
-    font-size:30px;
+    font-size:40px;
     text-align:center;
-    padding:2vh;
-    height:5vh;
+    padding:3vh;
     flex-grow:1;
-    border: 1px white solid;
-    background-color: #009ad8;
-    color: white;
+    background-color: #00a9ed;
 
 }
 
 .buttons:hover {
-    background-color: #00a9ed;
+  
+    background-color: #fff;
+    color: #00a9ed;
+    cursor: pointer;
 
 }
 
 .learn{
     grid-area:learn;
+    border-right: 4px #00a9ed solid;
     
 }
 .translate{
     grid-area:translate;
+    border-right: 4px #00a9ed solid;
 }
 .message{
     grid-area:message;
@@ -52,8 +52,7 @@ body{
     grid-area:reference;  
 }
 .footer{
-    background-color: grey;
-    color: white;
+    background-color: #9c9c9c;
     margin-top:2vh;
     grid-area:footer;
     font-size:48px;
@@ -64,19 +63,19 @@ body{
     left: 10px;
 }
 .content{
-    background-color:white;
     right: 10px;
     left:10px;
     position: absolute;
     top:20vh;
     bottom:10vh;
+    background-color: #fff;
 
 }
 .flex{
     display:flex;
     grid-area:flex;
-    border: 5px white solid;
     margin-bottom:20px;
+    border: 4px #00a9ed solid;
 }
 .learnsection{
     display:flex;
