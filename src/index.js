@@ -91,3 +91,18 @@ const translateMorseToEnglish = (input) => {
         return "Error: morse code not found for characters";
     }
 }
+
+//EVENT LISTENERS
+
+function changeState(state) {
+    var states = document.getElementsByClassName("state")
+    for (var i = 0; i < states.length; i++) {
+        document.getElementById(states[i].id).style.display = "none";
+    }
+    document.getElementById(state).style.display = "block";
+}
+
+document.getElementById("learnButton").addEventListener("click", function() { changeState("learnState") });
+document.getElementById("translateButton").addEventListener("click", function() { changeState("translateState") });
+document.getElementById("messageButton").addEventListener("click", function() { changeState("messageState") });
+
