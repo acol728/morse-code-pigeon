@@ -1,4 +1,4 @@
-const morseCode = {
+export default {
     "0": "-----",
     "1": ".----",
     "2": "..---",
@@ -45,4 +45,3 @@ const morseCode = {
     "(": "-.--.",
     ")": "-.--.-"
 }
-console.table(morseCode);
