@@ -127,9 +127,12 @@ function addText(message) {
     
 }
 document.getElementById("initialButton").addEventListener("click", function() {changeState("initialState")});
-document.getElementById("learnButton").addEventListener("click", function() { changeState("learnState") });
-document.getElementById("translateButton").addEventListener("click", function() { changeState("translateState") });
-document.getElementById("messageButton").addEventListener("click", function() { changeState("messageState") });
+document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
+document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
+document.getElementById("messageButton").addEventListener("click", function () { changeState("messageState") });
 
 document.getElementById("Sender").addEventListener("click", function() { addText(document.getElementById("message").value)})
 
+document.getElementById("green").addEventListener("click", function() { changeState("greenState"); });
+document.getElementById("yellow").addEventListener("click", function() { changeState("yellowState") });
+document.getElementById("red").addEventListener("click", function() { changeState("redState") });

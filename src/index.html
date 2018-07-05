@@ -50,22 +50,34 @@
         <div class="column-1 column-learning">
           <h3>Beginner</h3>
           <p>We will display a Morse Code LETTER on the screen and you have to enter its English equivalent.
-            <div class="circle" style="background-color:green;"></div>
+            <div class="circle" id="green" style="background-color:green;"></div>
           </p>
         </div>
         <div class="column-2 column-learning">
           <h3>Intermediate</h3>
           <p>We will display a Morse Code WORD on the screen and you have to enter its English equivalent.
-              <div class="circle" style="background-color:yellow; margin-top:35px"></div>
+              <div class="circle" id="yellow" style="background-color:yellow; margin-top:35px"></div>
           </p>
         </div>
         <div class="column-3 column-learning">
           <h3>Hard</h3>
           <p>We will display a Morse Code SENTENCE on the screen and you have to enter its English equivalent.
-            <div class="circle" style="background-color:red;"></div>
+            <div class="circle" id="red" style="background-color:red;"></div>
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="state" id="greenState" style="display: none">
+        <h2>Green State</h2>
+    </div>
+
+    <div class="state" id="yellowState" style="display: none">
+        <h2>Yellow State</h2>
+    </div>
+
+    <div class="state" id="redState" style="display: none">
+        <h2>Red State</h2>
     </div>
 
     <div class="state" id="translateState" style="display: none">
