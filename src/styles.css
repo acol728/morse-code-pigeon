@@ -1,5 +1,6 @@
 body{
     background-color: #D3D3D3;
+    font-family: verdana;
 }
 #container{
     display:grid;
@@ -11,7 +12,8 @@ body{
     height:100%; 
 }
 .top{
-    background-color: red;
+    background-color: grey;
+    color: white;
     grid-area:top;
     font-size:5vh;
     text-align:center;
@@ -25,27 +27,32 @@ body{
     padding:2vh;
     height:5vh;
     flex-grow:1;
-    border: 1px black solid;
+    border: 1px white solid;
+    background-color: #009ad8;
+    color: white;
+
 }
+
+.buttons:hover {
+    background-color: #00a9ed;
+}
+
 .learn{
-    background-color: green;
     grid-area:learn;
     
 }
 .translate{
-    background-color: purple;
     grid-area:translate;
 }
 .message{
-    background-color: blue;
     grid-area:message;
 }
 .reference{
-    background-color: orange;
     grid-area:reference;  
 }
 .footer{
-    background-color: yellow;
+    background-color: grey;
+    color: white;
     margin-top:2vh;
     grid-area:footer;
     font-size:48px;
@@ -67,6 +74,6 @@ body{
 .flex{
     display:flex;
     grid-area:flex;
-    border: 5px black solid;
+    border: 5px white solid;
     margin-bottom:20px;
 }
