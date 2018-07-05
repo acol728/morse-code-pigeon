@@ -1,1 +1,63 @@
+#container{
+    display:grid;
+    grid-template-areas:
+    "top top"
+    "learn translate"
+    "reference message"
+    "footer footer"; 
+    
+}
+.top{
+    background-color: red;
+    grid-area:top;
+    font-size:48px;
+    text-align:center;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.learn{
+    background-color: green;
+    grid-area:learn;
+    font-size:48px;
+    text-align:center;
+    margin-bottom:10%;
+    width: 100%;
+}
+
+.translate{
+    background-color: purple;
+    grid-area:translate;
+   
+    font-size:48px;
+    text-align:center;
+    margin-bottom:10%;
+    width: 100%;
+}
+.message{
+    background-color: blue;
+    grid-area:message;
+    
+    font-size:48px;
+    text-align:center;
+    margin-bottom:10%;
+    width: 100%;
+}
+.reference{
+    background-color: orange;
+    grid-area:reference;
+    
+    font-size:48px;
+    text-align:center;
+    margin-bottom:10%;
+    width: 100%;
+}
+.footer{
+    background-color: yellow;
+    grid-area:footer;
+    font-size:48px;
+    text-align:center;
+    margin-bottom:10%;
+    width: 100%;
+}
 
