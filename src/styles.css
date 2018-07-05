@@ -31,6 +31,7 @@ body{
 .buttons:hover {
     background-color: #fff;
     color: #00a9ed;
+    cursor: pointer;
 }
 
 .learn{
