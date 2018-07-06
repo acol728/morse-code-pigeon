@@ -1,3 +1,5 @@
+let soundOn = true;
+
 const morseCode = {
     "zero": "-----",
     "one": ".----",
@@ -65,6 +67,7 @@ const translateEnglishToMorse = (input) => {
                 throw "Character is not translatable to Morse Code";
             }
             var resultArray = result.trim().split("");
+          if(soundOn){
             for (var i = 0; i < resultArray.length; i++) {
                 (function (i) {
 
@@ -75,9 +78,8 @@ const translateEnglishToMorse = (input) => {
                 }(i));
 
             }
+          }
         });
-
-
 
     } catch (err) {
         result = "Error: invalid character. " + err;
@@ -103,7 +105,7 @@ function sound(element) {
 const translateMorseToEnglish = (input) => {
     let result = "";
     var resultArray = input.trim().split("");
-    
+    if(soundOn){
     for (var i = 0; i < resultArray.length; i++) {
         (function (i) {
 
@@ -113,6 +115,7 @@ const translateMorseToEnglish = (input) => {
 
         }(i));
 
+    }
     }
     try {
 
@@ -209,6 +212,17 @@ function gameListener(userInput, color) {
     }
 }
 
+function handleSound() {
+    const obj = document.getElementById("soundIcon");
+    if (soundOn) {
+        obj.style.backgroundImage = "url('../assets/soundIconOff.png')";
+        soundOn = false;
+    } else {
+        obj.style.backgroundImage = "url('../assets/soundIcon.png')";
+        soundOn = true;
+    }
+}
+
 document.getElementById("initialButton").addEventListener("click", function () { changeState("initialState") });
 document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
@@ -219,6 +233,8 @@ document.getElementById("subTranslateButton").addEventListener("click", function
 document.getElementById("subMessageButton").addEventListener("click", function () { changeState("messageState") });
 
 document.getElementById("translateInput").addEventListener("keyup", translateText);
+
+document.getElementById("soundIcon").addEventListener("click", handleSound);
 
 document.getElementById("message").addEventListener("keypress", function (e) {
     var key = e.which || e.keyCode;

@@ -84,6 +84,24 @@ body{
     cursor: pointer;
     background-color: #401D53;
 }
+
+#soundIcon{
+    background-image: url("../assets/soundIcon.png");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25px;
+    width: 25px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 25px;
+    transition: background-color .25s;
+}
+
+#soundIcon:hover{
+    cursor: pointer;
+    background-color: #401D53;
+}
 /*UNIVERSAL STYLES*/
 
 #stateContainer{
@@ -210,6 +228,10 @@ textarea:focus{
     margin-top: 50px;
     display: inline-block;
     opacity: 1;
+    background-image: url("../assets/strike.png");
+    background-size: 60px 100px;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: opacity .25s;
 }
 

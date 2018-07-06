@@ -14,8 +14,8 @@
   <div id="container">
     <div id="navBar">
       <div id="initialButton">
-          <img src="../assets/logoT.png" height="50px" width="50px" style="padding: 12.5px;">
-          <text id="headText">Morse Code Pigeon</text>
+        <img src="../assets/logoT.png" height="50px" width="50px" style="padding: 12.5px;">
+        <text id="headText">Morse Code Pigeon</text>
       </div>
       <div id="emptySpace"></div>
       <div id="navButtons">
@@ -23,6 +23,7 @@
         <div class="navButton" id="translateButton">Translate</div>
         <div class="navButton" id="messageButton">Message</div>
       </div>
+      <div id="soundIcon"></div>
     </div>
 
     <div id="stateContainer">
@@ -35,17 +36,17 @@
             and long beeps.</p>
           <div id="initialStateFlex2">
             <div class="initialStateFlex2Item">
-                <h1>Rules of Morse Code:</h1>
-                <ol>
-                  <li>There should be no spaces between parts of a letter.</li>
-                  <li>There should be one space between letters.</li>
-                  <li>A space between words is represented by "/".</li>
-                </ol>
-                <h3>Example: "Hello World" in Morse Code is ".... . .-.. .-.. ---/.-- --- .-. .-.. -.."</h3>
+              <h1>Rules of Morse Code:</h1>
+              <ol>
+                <li>There should be no spaces between parts of a letter.</li>
+                <li>There should be one space between letters.</li>
+                <li>A space between words is represented by "/".</li>
+              </ol>
+              <h3>Example: "Hello World" in Morse Code is ".... . .-.. .-.. ---/.-- --- .-. .-.. -.."</h3>
             </div>
             <div class="initialStateFlex2Item">
               <center>
-                  <img src="../assets/morsechart.png" alt="morse code key" height="350px" width="300px">
+                <img src="../assets/morsechart.png" alt="morse code key" height="350px" width="300px">
               </center>
             </div>
           </div>
@@ -186,7 +187,7 @@
 
       <div class="state" id="messageState" style="display: none">
 
-        <div class="chatbox">
+        <div class="chatbox" style="border-radius: 6px;">
           <div class="chatlogs">
             <div class="chat friend">
               <p class="chat-message">.... . .-.. .-.. ---, I am Chatbot.</p>
