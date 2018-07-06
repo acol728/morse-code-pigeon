@@ -29,19 +29,20 @@
             comprised completely of dots and dashes, known as dits (pronounced with a silent “t”) and dahs. While at first
             used visually, it soon turned into a primarily sound-based language, with dits and dahs represented by short
             and long beeps.</p>
-          <div id="initial-flex">
-            <div class="initial-class-item">
-              <h1>Rules of Morse Code:</h1>
-              <ol>
-                <li>There should be no spaces between parts of a letter.</li>
-                <li>There should be one space between letters.</li>
-                <li>A space between words is represented by "/".</li>
-              </ol>
-              <h3>Example: "Hello World" in Morse Code is ".... . .-.. .-.. ---/.-- --- .-. .-.. -.."</h3>
+          <div id="initialStateFlex2">
+            <div class="initialStateFlex2Item">
+              <center>
+                <h1>Rules of Morse Code:</h1>
+                <ol>
+                  <li>There should be no spaces between parts of a letter.</li>
+                  <li>There should be one space between letters.</li>
+                  <li>A space between words is represented by "/".</li>
+                </ol>
+                <h3>Example: "Hello World" in Morse Code is ".... . .-.. .-.. ---/.-- --- .-. .-.. -.."</h3>
+              </center>
             </div>
-            <div class="initial-class-item">
-              <img src="https://files.slack.com/files-pri/TAY65C0G0-FBK8TDU9J/1200px-international_morse_code.svg__1_.png" alt="morse code key"
-                height="350px" width="300px">
+            <div class="initialStateFlex2Item">
+              <img src="https://files.slack.com/files-pri/TAY65C0G0-FBK8TDU9J/1200px-international_morse_code.svg__1_.png" alt="morse code key" height="350px" width="300px">
             </div>
           </div>
         </div>
@@ -59,7 +60,7 @@
             <div class="initialStateFlexItem">
               <center>
                 <h3>Translate Code</h3>
-                <p>Use our translater to get from english to morse code or morse code to english and hear how it sounds!</p>
+                <p>Use our translater to get from english to morse code or morse code to english!</p>
                 <div class="subButton" id="subTranslateButton">Translate</div>
               </center>
             </div>
@@ -76,32 +77,37 @@
 
       <div class="state" id="learnState" style="display: none;">
 
-        <div class="learnsection">
-          <div class="column-1 column-learning">
-            <h3>Beginner</h3>
-            <p>We will display a Morse Code LETTER on the screen and you have to enter its English equivalent.
-              <div class="circle" id="green" style="background-color:green;"></div>
-            </p>
+        <div id="learnStateFlex">
+          <div class="learnStateFlexItem">
+            <center>
+              <h3 style="font-family: sweetEasy">Beginner</h3>
+              <p>We will display a Morse Code LETTER on the screen and you have to enter its English equivalent.
+                <div class="circle" id="green" style="background-color:#2D9A2D; border: 10px solid #4BB34B;"></div>
+              </p>
+            </center>
           </div>
-          <div class="column-2 column-learning">
-            <h3>Intermediate</h3>
-            <p>We will display a Morse Code WORD on the screen and you have to enter its English equivalent.
-              <div class="circle" id="yellow" style="background-color:yellow;"></div>
-            </p>
+          <div class="learnStateFlexItem">
+            <center>
+              <h3 style="font-family: sweetEasy">Intermediate</h3>
+              <p>We will display a Morse Code WORD on the screen and you have to enter its English equivalent.
+                <div class="circle" id="yellow" style="background-color:#C1B438; border: 10px solid #E0D35F;"></div>
+              </p>
+            </center>
           </div>
-          <div class="column-3 column-learning">
-            <h3>Hard</h3>
-            <p>We will display a Morse Code SENTENCE on the screen and you have to enter its English equivalent.
-              <div class="circle" id="red" style="background-color:red;"></div>
-            </p>
+          <div class="learnStateFlexItem">
+            <center>
+              <h3 style="font-family: sweetEasy">Advanced</h3>
+              <p>We will display a Morse Code SENTENCE on the screen and you have to enter its English equivalent.
+                <div class="circle" id="red" style="background-color:#AA3939; border: 10px solid #D46A6A;"></div>
+              </p>
+            </center>
           </div>
-
         </div>
         <div class="bottom"></div>
       </div>
 
       <div class="state" id="greenState" style="display: none; color: black; text-align:center">
-        <h1 style="font-size:32; color:green">Beginner</h1>
+        <h1 style="font-size:32; color:#2D9A2D">Beginner</h1>
         <h2>Use the answer box to enter the English letter represented by the Morse Code example given.</h2>
         <div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
@@ -121,7 +127,7 @@
       </div>
 
       <div class="state" id="yellowState" style="display: none; color: black; text-align:center">
-        <h1 style="font-size:32; color:yellow">Intermediate</h1>
+        <h1 style="font-size:32; color: #C1B438;">Intermediate</h1>
         <h2>Use the answer box to enter the English word represented by the Morse Code example given.</h2>
         <div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
@@ -141,7 +147,7 @@
       </div>
 
       <div class="state" id="redState" style="display: none; color: black; text-align:center">
-        <h1 style="font-size:32; color:red">Intermediate</h1>
+        <h1 style="font-size:32; color:#AA3939">Intermediate</h1>
         <h2>Use the answer box to enter the English sentence represented by the Morse Code example given.</h2>
         <div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">

@@ -112,6 +112,21 @@ body{
     width: 0px;
 }
 
+#learnStateFlex{
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+
+.learnStateFlexItem{
+    width: 0px;
+    flex-grow: 1;
+    padding: 50px;
+    margin: 50px;
+    background-color: #D2C8D8;
+    border-radius: 6px;
+}
+
 textarea{
     border: 0;
     padding: 15px;
@@ -142,59 +157,27 @@ textarea:focus{
 .subButton:active{
     transform: translateY(3px);
 }
-.content{
-    right: 10px;
-    left:10px;
-    position: absolute;
-    top:20vh;
-    background-color: #fff;
-
-}
-.flex{
-    display:flex;
-    grid-area:flex;
-    border: 4px #00a9ed solid;
-}
-.learnsection{
-    display:flex;
-    margin: 3vh  15vh 5vh 15vh;
-    justify-content: space-between;
-    text-align:center;
-}
-.column-1{
-    background-color:teal;
-}
-.column-2{
-    background-color:orange;
-}
-.column-3{
-    background-color:green;
-}
-.column-learning{
-    height:10vh;
-    width:40vh;
-    padding-bottom:50vh;
-    background-color: #9c9c9c;
-    font-size: 30px;
-}
 .section-heading{
     text-align:center;
     color:black;
 }
-#initial-flex{
+#initialStateFlex2{
     display:flex;
     flex-direction:row;
-    justify-content:center;
 }
-.initial-class-item{
+.initialStateFlex2Item{
     padding:25px;
 }
 .circle{
     height:150px;
     width:150px;
     border-radius:50%;
+    margin-top: 50px;
     display: inline-block;
-    cursor:pointer;
+}
+.circle:hover{
+    cursor: pointer;
+    opacity: .75;
 }
 .bottom{
     background-color: #D2C8D8;
