@@ -86,7 +86,7 @@ body{
 
 #boxOne, #boxTwo{
     width: 100%;
-    padding: 75px 0px 0px 0px;
+    padding-top: 30px;
 }
 
 #boxTwo{
@@ -118,6 +118,8 @@ body{
 .section-heading{
     text-align:center;
     color:black;
+    font-size: 20pt;
+    font-family: sweetEasy;
 }
 
 /*INITIAL PAGE STYLES*/
@@ -166,6 +168,7 @@ textarea{
     padding: 15px;
     background-color: #D2C8D8;
     box-sizing: border-box;
+    border-radius: 6px;
 }
 
 textarea:focus{
@@ -195,11 +198,13 @@ textarea:focus{
     border-radius:50%;
     margin-top: 50px;
     display: inline-block;
+    opacity: 1;
+    transition: opacity .25s;
 }
 
 .circle:hover{
     cursor: pointer;
-    opacity: .75;
+    opacity: .6;
 }
 
 .bottom{
