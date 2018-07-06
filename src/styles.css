@@ -200,3 +200,11 @@ body{
     display: inline-block;
     cursor:pointer;
 }
+.bottom{
+    background-color: #D2C8D8;
+    border-top: 20px solid #78375C;
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+    position: absolute;
+    bottom:0;
+}
