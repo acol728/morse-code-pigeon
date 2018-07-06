@@ -44,7 +44,8 @@ const morseCode = {
     "@": ". - - . - . ",
     "(": "- . - - . ",
     ")": "- . - - . - ",
-    " ": "space "
+    "": "space ",
+    " ": "/ "
 }
 
 const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
@@ -101,6 +102,7 @@ const translateMorseToEnglish = (input) => {
             if (element[i] !== "s") {
                 newElement += element.toString().charAt(i) + " ";
             } else if (element[i] === "s") {
+                result += " ";
                 newElement += element.toString().substring(i, i + 5) + " ";
                 i += 6;
             } else {
@@ -112,10 +114,11 @@ const translateMorseToEnglish = (input) => {
     return result;
 }
 
-const greenGame = [". - ", "- . . . ", "- . - . "];
-const yellowGame = [". - ", "- . . . ", "- . - . "];
-const redGame = [". - ", "- . . . ", "- . - . "];
-const chatBot = ["adam is goofy", "hello there human", "I am sentient", "I can see you", "I am chatBot"];
+const greenGame = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const yellowGame = ["hello", "test", "cat", "dog", "what", "soda", "pizza", "game", "morse", "code", "candy", "water", "sun", "sand", "beach"];
+const redGame = ["hello world", "morse code pigeon", "this is fun", "how are you", "i like food", "look for it", "it is summer", "common letters"];
+const chatBot = ["adam is goofy", "Hello there human", "I am sentient", "I can see you", "I am chatBot", "What is Up Brother!"];
+
 
 function changeState(state) {
     var states = document.getElementsByClassName("state")
@@ -131,8 +134,6 @@ function addText(message) {
     var sent = "<p class='chat-message'>" + message + "</p>";
     var style = "<div class='chat self'>" + sent + "</div>"
 
-
-
     $(".chatlogs").append(style);
     var roboMessage = translateEnglishToMorse(chatBot[genRan(chatBot.length - 1)]);
     var roboSent = "<p class='chat-message'>" + roboMessage + "</p>";
@@ -143,27 +144,6 @@ function addText(message) {
     soloMessage.value = "";
 }
 
-function translatePage() {
-    const input = document.getElementById("translateInput").value;
-    let result;
-    if (input.charAt(0) == "." || input.charAt(0) == "-") {
-        try {
-            result = translateMorseToEnglish(input);
-        } catch (err) {
-            result = "Unable to translate morse to english, check formatting";
-        }
-    } else {
-        try {
-            result = translateEnglishToMorse(input);
-        } catch (err) {
-            result = "Unabled to translate english to morse";
-        }
-    }
-    document.getElementById("translateOutput").value = result;
-}
-
-document.getElementById("initialButton").addEventListener("click", function() {changeState("initialState")});
-
 function genRan(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -171,16 +151,16 @@ function genRan(max) {
 function gameListener(userInput, color) {
     var morseTranslation = translateEnglishToMorse(userInput).replace(/\s+/g, '');
     var question = document.getElementById(color + "morse").innerHTML.replace(/\s+/g, '');
-    
+
     if (question == morseTranslation) {
         document.getElementById(color + "ResultMessage").innerHTML = "Correct!";
         document.getElementById(color + 'Score').innerHTML++;
         if (color === "green")
-            document.getElementById(color + "morse").innerHTML = greenGame[genRan(3)];
+            document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(greenGame[genRan(greenGame.length - 1)]);
         if (color === "yellow")
-            document.getElementById(color + "morse").innerHTML = yellowGame[genRan(3)];
+            document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(yellowGame[genRan(yellowGame.length - 1)]);
         if (color === "red")
-            document.getElementById(color + "morse").innerHTML = redGame[genRan(3)];
+            document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(redGame[genRan(redGame.length - 1)]);
         setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "" }, 2000);
     }
     else {
@@ -188,24 +168,7 @@ function gameListener(userInput, color) {
         setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "" }, 2000);
     }
 }
-/*function yellowListener(userInput) {
-    var morseTranslation = translateEnglishToMorse(userInput).replace(/\s+/g, '');
-    var question = document.getElementById("yellowmorse").innerHTML.replace(/\s+/g, '');
 
-    console.log(morseTranslation);
-    console.log(question);
-    if (question == morseTranslation) {
-        document.getElementById("yellowResultMessage").innerHTML = "Correct!";
-        document.getElementById('yellowScore').innerHTML++;
-        document.getElementById("yellowmorse").innerHTML = yellowGame[genRan(3)];
-        setTimeout(function () { document.getElementById("yellowResultMessage").innerHTML = "" }, 2000);
-    }
-    else {
-        document.getElementById("yellowResultMessage").innerHTML = "Wrong!";
-        setTimeout(function () { document.getElementById("yellowResultMessage").innerHTML = "" }, 2000);
-    }
-}
-*/
 document.getElementById("initialButton").addEventListener("click", function () { changeState("initialState") });
 document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
@@ -215,9 +178,11 @@ document.getElementById("subLearnButton").addEventListener("click", function () 
 document.getElementById("subTranslateButton").addEventListener("click", function () { changeState("translateState") });
 document.getElementById("subMessageButton").addEventListener("click", function () { changeState("messageState") });
 
-document.getElementById("Sender").addEventListener("click", function () { addText(document.getElementById("message").value) })
-
-document.getElementById("translateInput").addEventListener("keyup", translatePage);
+document.getElementById("message").addEventListener("keypress", function (e) { 
+    var key = e.which || e.keyCode;
+    if(key == 13){
+    addText(document.getElementById("message").value) }
+});
 
 document.getElementById("green").addEventListener("click", function () { changeState("greenState"); });
 document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState") });
