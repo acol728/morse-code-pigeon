@@ -115,7 +115,7 @@ const translateMorseToEnglish = (input) => {
 const greenGame = [". - ", "- . . . ", "- . - . "];
 const yellowGame = [". - ", "- . . . ", "- . - . "];
 const redGame = [". - ", "- . . . ", "- . - . "];
-const chatBot = ["adam is goofy", "hello there human", "I am sentient", "I can see you", "I am chatBot"];
+const chatBot = ["adam is goofy", "Hello there human", "I am sentient", "I can see you", "I am chatBot", "What's Up Brother!"];
 
 function changeState(state) {
     var states = document.getElementsByClassName("state")
