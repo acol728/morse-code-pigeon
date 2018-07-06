@@ -44,7 +44,8 @@ const morseCode = {
     "@": ". - - . - . ",
     "(": "- . - - . ",
     ")": "- . - - . - ",
-    " ": "space "
+    "": "space ",
+    " ": "/ "
 }
 
 const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
@@ -101,6 +102,7 @@ const translateMorseToEnglish = (input) => {
             if (element[i] !== "s") {
                 newElement += element.toString().charAt(i) + " ";
             } else if (element[i] === "s") {
+                result += " ";
                 newElement += element.toString().substring(i, i + 5) + " ";
                 i += 6;
             } else {
@@ -141,28 +143,9 @@ function addText(message) {
     $(".chatlogs").append(roboStyle);
 
     soloMessage.value = "";
-}
 
-function translatePage() {
-    const input = document.getElementById("translateInput").value;
-    let result;
-    if (input.charAt(0) == "." || input.charAt(0) == "-") {
-        try {
-            result = translateMorseToEnglish(input);
-        } catch (err) {
-            result = "Unable to translate morse to english, check formatting";
-        }
-    } else {
-        try {
-            result = translateEnglishToMorse(input);
-        } catch (err) {
-            result = "Unabled to translate english to morse";
-        }
-    }
-    document.getElementById("translateOutput").value = result;
-}
 
-document.getElementById("initialButton").addEventListener("click", function() {changeState("initialState")});
+}
 
 function genRan(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -216,8 +199,6 @@ document.getElementById("subTranslateButton").addEventListener("click", function
 document.getElementById("subMessageButton").addEventListener("click", function () { changeState("messageState") });
 
 document.getElementById("Sender").addEventListener("click", function () { addText(document.getElementById("message").value) })
-
-document.getElementById("translateInput").addEventListener("keyup", translatePage);
 
 document.getElementById("green").addEventListener("click", function () { changeState("greenState"); });
 document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState") });
