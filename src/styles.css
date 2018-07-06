@@ -221,3 +221,51 @@ textarea:focus{
     position: absolute;
     bottom:0;
 }
+
+#greenInput {
+    border: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#greenInput:focus {
+    outline: 0;
+}
+
+#yellowInput {
+    border: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#yellowInput:focus {
+    outline: 0;
+}
+
+#redInput {
+    border: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#redInput:focus {
+    outline: 0;
+}
+
+#greenAnswerBox {
+    transition: background-color 0.25s;
+}
+
+#yellowAnswerBox {
+    transition: background-color 0.25s;
+}
+
+#redAnswerBox {
+    transition: background-color 0.25s;
+}

@@ -52,26 +52,26 @@
         </div>
         <div id="boxTwo">
           <h1 class="section-heading">Get started</h1>
-          <p style="text-align: center;">Jump right into our morse code pigeon</p>
+          <p style="text-align: center;">Jump right into learning Morse Code!</p>
           <div id="initialStateFlex">
             <div class="initialStateFlexItem">
               <center>
                 <h3>Learn Morse Code</h3>
-                <p>Check our games to help you advance your morse code skills!</p>
+                <p>Check our games to help you advance your Morse Code skills!</p>
                 <div class="subButton" id="subLearnButton">Learn</div>
               </center>
             </div>
             <div class="initialStateFlexItem">
               <center>
                 <h3>Translate Code</h3>
-                <p>Use our translater to get from english to morse code or morse code to english!</p>
+                <p>Use our translator to get from English to Morse Code or Morse Code to English!</p>
                 <div class="subButton" id="subTranslateButton">Translate</div>
               </center>
             </div>
             <div class="initialStateFlexItem">
               <center>
                 <h3>Send a Message</h3>
-                <p>Send messages to your friends with our morse code application!</p>
+                <p>Send messages to your friends with our Morse Code application!</p>
                 <div class="subButton" id="subMessageButton">Message</div>
               </center>
             </div>
@@ -105,7 +105,7 @@
         <div class="bottom"></div>
       </div>
       <div class="state" id="greenState" style="display: none; color: black; text-align:center">
-        <h1 style="font-size:32; color:#2D9A2D">Beginner</h1>
+        <h1 style="font-size:24; font-family: sweetEasy;">Beginner</h1>
         <h2>Use the answer box to enter the English letter represented by the Morse Code example given.</h2>
         <div>
           <div style="display:block; float:right">
@@ -114,36 +114,35 @@
           <div style="display:block; float:left">
             <img src="../assets/morsechart.png" alt="morse code key" height="350px" width="300px">
           </div>
-          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+          <div style="margin: 20px 25%; background-color: #D2C8D8; border-radius: 6px; color:black; text-align: center; font-size:24; padding:10px">
             <h3>Morse Code:</h3>
             <h4 id="greenmorse">.-</h4>
           </div>
-          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+          <div id="greenAnswerBox" style="margin: 40px 25%; background-color: #D2C8D8; border-radius: 6px; color:black; text-align: center; font-size:24; padding:10px">
             <h3>Enter its English Equivalent:</h3>
             <input id="greenInput" type="text">
             <h4 id="greenResultMessage"></h4>
           </div>
-          <h3>Score:
+          <h3 style="margin-top:0px;">Score:
             <span id="greenScore">0</span>
           </h3>
           <div class="bottom"></div>
         </div>
       </div>
-
       <div class="state" id="yellowState" style="display: none; color: black; text-align:center">
-        <h1 style="font-size:32; color: #C1B438;">Intermediate</h1>
+        <h1 style="font-size:24; font-family: sweetEasy;">Intermediate</h1>
         <h2>Use the answer box to enter the English word represented by the Morse Code example given.</h2>
         <div>
-          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+          <div style="margin: 20px 25%; background-color: #D2C8D8; border-radius: 6px; color:black; text-align: center; font-size:24; padding:10px">
             <h3>Morse Code:</h3>
             <h4 id="yellowmorse">.... . .-.. .-.. ---</h4>
           </div>
-          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+          <div id="yellowAnswerBox" style="margin: 40px 25%; background-color: #D2C8D8; border-radius: 6px; color:black; text-align: center; font-size:24; padding:10px">
             <h3>Enter its English Equivalent:</h3>
             <input id="yellowInput" type="text">
             <h4 id="yellowResultMessage"></h4>
           </div>
-          <h3>Score:
+          <h3 style="margin-top:0px;">Score:
             <span id="yellowScore">0</span>
           </h3>
           <div class="bottom"></div>
@@ -151,19 +150,19 @@
       </div>
 
       <div class="state" id="redState" style="display: none; color: black; text-align:center">
-        <h1 style="font-size:32; color:#AA3939">Intermediate</h1>
+        <h1 style="font-size:24; font-family: sweetEasy;">Intermediate</h1>
         <h2>Use the answer box to enter the English phrase represented by the Morse Code example given.</h2>
         <div>
-          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+          <div style="margin: 20px 25%; background-color: #D2C8D8; border-radius: 6px; color:black; text-align: center; font-size:24; padding:10px">
             <h3>Morse Code:</h3>
-            <h4 id="redmorse">.... . .-.. .-.. --- space .-- --- .-. .-.. -..</h4>
+            <h4 id="redmorse">.... . .-.. .-.. --- / .-- --- .-. .-.. -..</h4>
           </div>
-          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+          <div id="redAnswerBox" style="margin: 40px 25%; background-color: #D2C8D8; border-radius: 6px; color:black; text-align: center; font-size:24; padding:10px;">
             <h3>Enter its English Equivalent:</h3>
             <input id="redInput" type="text">
             <h4 id="redResultMessage"></h4>
           </div>
-          <h3>Score:
+          <h3 style="margin-top:0px;">Score:
             <span id="redScore">0</span>
           </h3>
           <div class="bottom"></div>
@@ -175,7 +174,7 @@
           <h1 class="section-heading">Translate</h1>
           <div id="translateStateFlex">
             <div class="translateStateFlexItem">
-              <textarea id="translateInput" placeholder="Enter english or morse to translate" cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%;"></textarea>
+              <textarea id="translateInput" placeholder="Enter English or Morse Code to translate..." cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%;"></textarea>
             </div>
             <div class="translateStateFlexItem">
               <textarea id="translateOutput" readonly cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%; background-color: #A895B3; color: white;"></textarea>
