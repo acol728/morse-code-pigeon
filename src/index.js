@@ -64,19 +64,21 @@ const translateEnglishToMorse = (input) => {
             } else {
                 throw "Character is not translatable to Morse Code";
             }
+            var resultArray = result.trim().split("");
+            for(var i = 0; i < resultArray.length; i++){
+                (function(i){
+    
+                    window.setTimeout(function(){
+                      sound(resultArray[i]);
+                    }, i * 80);
+                
+                  }(i));
+    
+            }
         });
-        var resultArray = result.trim().split("");
         
-        for(var i = 0; i < resultArray.length; i++){
-            (function(i){
-
-                window.setTimeout(function(){
-                  sound(resultArray[i]);
-                }, i * 250);
-            
-              }(i));
-
-        }
+        
+    
     } catch (err) {
         result = "Error: invalid character. " + err;
     }
@@ -102,6 +104,17 @@ const translateMorseToEnglish = (input) => {
     let result = "";
     let morseArray = [];
     let currentChar = "";
+    var resultArray = input.trim().split("");
+            for(var i = 0; i < resultArray.length; i++){
+                (function(i){
+    
+                    window.setTimeout(function(){
+                      sound(resultArray[i]);
+                    }, i * 200);
+                
+                  }(i));
+    
+            }
     try {
         for (let i = 0; i < input.toString().length; i++) {
             let element = input.toString().charAt(i);
@@ -118,8 +131,10 @@ const translateMorseToEnglish = (input) => {
                     throw "Character is not morse/does not follow input guide";
                 }
             }
+            
         }
         morseArray.push(currentChar);
+        
     } catch (err) {
         result = "Error: invalid character. " + err;
     }
