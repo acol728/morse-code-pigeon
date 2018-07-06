@@ -124,6 +124,7 @@
           <h3>Score:
             <span id="greenScore">0</span>
           </h3>
+          <div class="bottom"></div>
         </div>
       </div>
 
@@ -143,6 +144,7 @@
           <h3>Score:
             <span id="yellowScore">0</span>
           </h3>
+          <div class="bottom"></div>
         </div>
       </div>
 
@@ -162,23 +164,28 @@
           <h3>Score:
             <span id="redScore">0</span>
           </h3>
+          <div class="bottom"></div>
         </div>
       </div>
 
-      <div class="state" id="translateState" style="display: none">
-        <h2 class="section-heading">Translate Between English and Morse Code</h2>
-        <div id="translate-flex">
-          <textarea class="translate-item" placeholder="Enter English to translate to Morse Code" cols="45" rows="20" style="font-size:20px; resize: none;"></textarea>
-          <img class="translate-item " src="http://sweetclipart.com/multisite/sweetclipart/files/arrows_back_forward.png" alt="arrows "
-            height="100px " width="200px ">
-          <textarea class="translate-item" placeholder="Enter Morse Code to translate to English" cols="45 " rows="20
-          " style="font-size:20px; resize: none;"></textarea>
+      <div class="state" id="translateState" style="display: none;">
+        <div id="boxOne">
+          <h1 class="section-heading">Translate Between English and Morse Code</h1>
+          <div id="translateStateFlex">
+            <div class="translateStateFlexItem">
+              <textarea id="translateInput" placeholder="Enter english or morse to translate" cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%;"></textarea>
+            </div>
+            <div class="translateStateFlexItem">
+              <textarea id="translateOutput" readonly placeholder="Output..." cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%;"></textarea>
+            </div>
+          </div>
         </div>
         <div class="bottom"></div>
       </div>
 
 
       <div class="state" id="messageState" style="display: none">
+       
         <div class="chatbox">
           <div class="chatlogs">
 
@@ -207,7 +214,6 @@
           </div>
           <div class="chat-form">
             <textarea id="message"></textarea>
-            <button id="Sender">Send</button>
           </div>
 
         </div>
