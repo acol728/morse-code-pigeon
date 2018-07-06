@@ -77,7 +77,7 @@ const translateMorseToEnglish = (input) => {
     try {
         for (let i = 0; i < input.toString().length; i++) {
             let element = input.toString().charAt(i);
-            if (element == "/" && input.toString().charAt(i+1) == " ") {
+            if (element == "/" && input.toString().charAt(i + 1) == " ") {
                 morseArray.push("space ");
                 i++;
             } else {
@@ -180,7 +180,9 @@ function gameListener(userInput, color) {
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(yellowGame[genRan(yellowGame.length - 1)]);
         if (color === "red")
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(redGame[genRan(redGame.length - 1)]);
-        setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "___" }, 2000);
+        document.getElementById(color + "Input").value = "";
+        setTimeout(function () {
+            document.getElementById(color + "ResultMessage").innerHTML = "___";}, 2000);
     }
     else {
         document.getElementById(color + "ResultMessage").innerHTML = "Wrong!";
@@ -199,15 +201,16 @@ document.getElementById("subMessageButton").addEventListener("click", function (
 
 document.getElementById("translateInput").addEventListener("keyup", translateText);
 
-document.getElementById("message").addEventListener("keypress", function (e) { 
+document.getElementById("message").addEventListener("keypress", function (e) {
     var key = e.which || e.keyCode;
-    if(key == 13){
-    addText(document.getElementById("message").value) }
+    if (key == 13) {
+        addText(document.getElementById("message").value)
+    }
 });
 
-document.getElementById("green").addEventListener("click", function () { changeState("greenState"); });
-document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState") });
-document.getElementById("red").addEventListener("click", function () { changeState("redState") });
+document.getElementById("green").addEventListener("click", function () { changeState("greenState"); document.getElementById('greenScore').innerHTML = 0;});
+document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState"); document.getElementById('yellowScore').innerHTML = 0;});
+document.getElementById("red").addEventListener("click", function () { changeState("redState"); document.getElementById('redScore').innerHTML = 0;});
 
 document.getElementById("greenInput").addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
