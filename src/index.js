@@ -136,7 +136,7 @@ function translateText() {
 const greenGame = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const yellowGame = ["hello", "test", "cat", "dog", "what", "soda", "pizza", "game", "morse", "code", "candy", "water", "sun", "sand", "beach"];
 const redGame = ["hello world", "morse code pigeon", "this is fun", "how are you", "i like food", "look for it", "it is summer", "common letters"];
-const chatBot = ["adam is goofy", "Hello there human", "I am sentient", "I can see you", "I am chatBot", "What is Up Brother!"];
+const chatBot = ["adam is goofy", "Hello there human", "I am sentient", "I can see you", "I am chatBot", "What is Up my Brother!"];
 
 
 function changeState(state) {

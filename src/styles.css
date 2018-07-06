@@ -37,12 +37,18 @@ body{
 #initialButton{
     display: inline-block;
     flex-grow: .75;
-    font-size: 16pt;
-    line-height: 75px;
     padding-left: 50px;
-    font-family: sweetEasy;
     background-color: #2A0C3A;
     transition: background-color .25s;
+    display: flex;
+    flex-direction: row;
+}
+
+#headText{
+    font-size: 16pt;
+    line-height: 75px;
+    font-family: sweetEasy;
+
 }
 
 #initialButton:hover{
