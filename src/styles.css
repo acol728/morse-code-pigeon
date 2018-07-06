@@ -76,7 +76,7 @@ body{
 
 #boxOne, #boxTwo{
     width: 100%;
-    padding: 50px 0px 50px 0px;
+    padding: 75px 0px 0px 0px;
 }
 
 #boxTwo{
@@ -91,7 +91,7 @@ body{
 
 .initialStateFlexItem{
     width: 0px;
-    padding: 20px;
+    padding: 50px;
     flex-grow: 1;
     transition: background-color .5s;
 }
