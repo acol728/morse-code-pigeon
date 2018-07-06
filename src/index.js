@@ -52,6 +52,7 @@ const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "sev
 
 const translateEnglishToMorse = (input) => {
     let result = "";
+    
     try {
         input.toLowerCase().split("", input.length).forEach(function (element) {
             if (morseCode[element]) {
@@ -64,10 +65,37 @@ const translateEnglishToMorse = (input) => {
                 throw "Character is not translatable to morse";
             }
         });
+        var resultArray = result.trim().split("");
+        
+        for(var i = 0; i < resultArray.length; i++){
+            (function(i){
+
+                window.setTimeout(function(){
+                  sound(resultArray[i]);
+                }, i * 250);
+            
+              }(i));
+
+        }
     } catch (err) {
         result = "Error: invalid character. " + err;
     }
     return result;
+}
+
+
+function sound(element){
+    
+    var audio = new Audio('../assets/Morse_Dot.wav');
+    var newAudio = new Audio('../assets/Morse_Dash.wav');
+
+    if(element === "."){
+        audio.play(); 
+        
+    }else if(element === "-"){
+        newAudio.play();  
+    }
+    
 }
 
 const translateMorseToEnglish = (input) => {
