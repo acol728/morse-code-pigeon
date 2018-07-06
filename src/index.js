@@ -217,6 +217,7 @@ function gameListener(userInput, color) {
     }
     else {
         document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D41616";
+        document.getElementById(color + "Input").value = "";
         setTimeout(function () {
             document.getElementById(color + "ResultMessage").innerHTML = "";
             document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D2C8D8";
