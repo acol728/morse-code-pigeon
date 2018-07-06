@@ -52,7 +52,7 @@ const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "sev
 
 const translateEnglishToMorse = (input) => {
     let result = "";
-    
+
     try {
         input.toLowerCase().split("", input.length).forEach(function (element) {
             if (morseCode[element]) {
@@ -65,20 +65,20 @@ const translateEnglishToMorse = (input) => {
                 throw "Character is not translatable to Morse Code";
             }
             var resultArray = result.trim().split("");
-            for(var i = 0; i < resultArray.length; i++){
-                (function(i){
-    
-                    window.setTimeout(function(){
-                      sound(resultArray[i]);
-                    }, i * 80);
-                
-                  }(i));
-    
+            for (var i = 0; i < resultArray.length; i++) {
+                (function (i) {
+
+                    window.setTimeout(function () {
+                        sound(resultArray[i]);
+                    }, i * 300);
+
+                }(i));
+
             }
         });
-        
-        
-    
+
+
+
     } catch (err) {
         result = "Error: invalid character. " + err;
     }
@@ -86,38 +86,37 @@ const translateEnglishToMorse = (input) => {
 }
 
 
-function sound(element){
-    
+function sound(element) {
+
     var audio = new Audio('../assets/Morse_Dot.wav');
     var newAudio = new Audio('../assets/Morse_Dash.wav');
 
-    if(element === "."){
-        audio.play(); 
-        
-    }else if(element === "-"){
-        newAudio.play();  
+    if (element === ".") {
+        audio.play();
+
+    } else if (element === "-") {
+        newAudio.play();
     }
-    
+
 }
 
 const translateMorseToEnglish = (input) => {
     let result = "";
-    let morseArray = [];
-    let currentChar = "";
     var resultArray = input.trim().split("");
-            for(var i = 0; i < resultArray.length; i++){
-                (function(i){
     
-                    window.setTimeout(function(){
-                      sound(resultArray[i]);
-                    }, i * 200);
-                
-                  }(i));
-    
-            }
+    for (var i = 0; i < resultArray.length; i++) {
+        (function (i) {
+
+            window.setTimeout(function () {
+                sound(resultArray[i]);
+            }, i * 300);
+
+        }(i));
+
+    }
     try {
 
-        input.toString().split(" ", input.length).forEach( function (e) {
+        input.toString().split(" ", input.length).forEach(function (e) {
             result += Object.keys(morseCode).find(key => morseCode[key] === e);
         });
 
@@ -198,7 +197,7 @@ function gameListener(userInput, color) {
         setTimeout(function () {
             document.getElementById(color + "ResultMessage").innerHTML = "";
             document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D2C8D8";
-    }, 750);
+        }, 750);
     }
     else {
         document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D41616";
@@ -228,9 +227,9 @@ document.getElementById("message").addEventListener("keypress", function (e) {
     }
 });
 
-document.getElementById("green").addEventListener("click", function () { changeState("greenState"); document.getElementById('greenScore').innerHTML = 0;});
-document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState"); document.getElementById('yellowScore').innerHTML = 0;});
-document.getElementById("red").addEventListener("click", function () { changeState("redState"); document.getElementById('redScore').innerHTML = 0;});
+document.getElementById("green").addEventListener("click", function () { changeState("greenState"); document.getElementById('greenScore').innerHTML = 0; });
+document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState"); document.getElementById('yellowScore').innerHTML = 0; });
+document.getElementById("red").addEventListener("click", function () { changeState("redState"); document.getElementById('redScore').innerHTML = 0; });
 
 document.getElementById("greenInput").addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
