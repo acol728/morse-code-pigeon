@@ -108,6 +108,7 @@ const translateEnglishToMorse = (input) => {
 const greenGame = [". - ", "- . . . ", "- . - . "];
 const yellowGame = [". - ", "- . . . ", "- . - . "];
 const redGame = [". - ", "- . . . ", "- . - . "];
+const chatBot = ["adam is goofy", "hello there human", "I am sentient", "I can see you", "I am chatBot"];
 
 function changeState(state) {
     var states = document.getElementsByClassName("state")
@@ -120,12 +121,18 @@ function changeState(state) {
 
 function addText(message) {
     var soloMessage = document.getElementById("message");
-    var messages = document.getElementsByClassName("chatlogs");
     var sent = "<p class='chat-message'>" + message + "</p>";
-
     var style = "<div class='chat self'>" + sent + "</div>"
 
+
+
     $(".chatlogs").append(style);
+    var roboMessage = translateEnglishToMorse(chatBot[genRan(chatBot.length - 1)]);
+    var roboSent = "<p class='chat-message'>" + roboMessage + "</p>";
+    var roboStyle = "<div class='chat friend'>" + roboSent + "</div>"
+
+    $(".chatlogs").append(roboStyle);
+
     soloMessage.value = "";
 
 
