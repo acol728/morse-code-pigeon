@@ -180,11 +180,11 @@ function gameListener(userInput, color) {
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(yellowGame[genRan(yellowGame.length - 1)]);
         if (color === "red")
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(redGame[genRan(redGame.length - 1)]);
-        setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "" }, 2000);
+        setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "___" }, 2000);
     }
     else {
         document.getElementById(color + "ResultMessage").innerHTML = "Wrong!";
-        setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "" }, 2000);
+        setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "___" }, 2000);
     }
 }
 
