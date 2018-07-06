@@ -172,7 +172,7 @@ function gameListener(userInput, color) {
     var question = document.getElementById(color + "morse").innerHTML.replace(/\s+/g, '');
 
     if (question == morseTranslation) {
-        document.getElementById(color + "ResultMessage").innerHTML = "Correct!";
+        document.getElementById(color + 'AnswerBox').style.backgroundColor = "#44B613";
         document.getElementById(color + 'Score').innerHTML++;
         if (color === "green")
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(greenGame[genRan(greenGame.length - 1)]);
@@ -180,13 +180,20 @@ function gameListener(userInput, color) {
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(yellowGame[genRan(yellowGame.length - 1)]);
         if (color === "red")
             document.getElementById(color + "morse").innerHTML = translateEnglishToMorse(redGame[genRan(redGame.length - 1)]);
+
         document.getElementById(color + "Input").value = "";
         setTimeout(function () {
-            document.getElementById(color + "ResultMessage").innerHTML = "___";}, 2000);
+            document.getElementById(color + "ResultMessage").innerHTML = "";
+            document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D2C8D8";
+        }, 1000);
     }
     else {
-        document.getElementById(color + "ResultMessage").innerHTML = "Wrong!";
-        setTimeout(function () { document.getElementById(color + "ResultMessage").innerHTML = "___" }, 2000);
+      document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D41616";
+      document.getElementById(color + "Input").value = "";
+      setTimeout(function () {
+          document.getElementById(color + "ResultMessage").innerHTML = "";
+          document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D2C8D8";
+      }, 1000);
     }
 }
 
