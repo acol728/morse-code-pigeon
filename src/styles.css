@@ -2,15 +2,18 @@
     src: url('../assets/sweet_easy/sweetEasy.ttf');
     font-family: sweetEasy;
 }
+
 @font-face{
     src: url('../assets/night_still_comes/NightStillComes_mine_final_sample.otf');
     font-family: night;
 }
+
 body{
     color: #fff;
     font-family: night;
     background-color: #DDD;
 }
+
 #container{
     top:0;
     left:0;
@@ -30,6 +33,7 @@ body{
     height: 75px;
     background-color: #2A0C3A;
 }
+
 #initialButton{
     display: inline-block;
     flex-grow: .75;
@@ -40,18 +44,22 @@ body{
     background-color: #2A0C3A;
     transition: background-color .25s;
 }
+
 #initialButton:hover{
     background-color: #401D53;
     cursor: pointer;
 }
+
 #emptySpace{
     flex-grow: 1.5;
 }
+
 #navButtons{
     flex-grow: 2;
     display: flex;
     flex-direction: row;
 }
+
 .navButton{
     width: 0px;
     flex-grow: 1;
@@ -62,12 +70,13 @@ body{
     border-bottom: 0px solid #78375C;
     transition: border .25s, background-color .25s;
 }
+
 .navButton:hover{
     border-bottom: 7px solid #78375C;
     cursor: pointer;
     background-color: #401D53;
 }
-/*end header*/
+/*UNIVERSAL STYLES*/
 
 #stateContainer{
     flex-grow: 1;
@@ -85,6 +94,34 @@ body{
     border-top: 20px solid #78375C;
 }
 
+.subButton{
+    display: inline-block;
+    padding: 10px 25px 10px 25px;
+    box-sizing: border-box;
+    background-color: #2A0C3A;
+    border-radius: 4px;
+    transition: border .25s;
+    text-align: center;
+    color: white;
+    transition: background-color .25s;
+}
+
+.subButton:hover{
+    cursor: pointer;
+    background-color: #543068;
+}
+
+.subButton:active{
+    transform: translateY(3px);
+}
+
+.section-heading{
+    text-align:center;
+    color:black;
+}
+
+/*INITIAL PAGE STYLES*/
+
 #initialStateFlex{
     display: flex;
     flex-direction: row;
@@ -101,6 +138,18 @@ body{
     background-color: #A895B3;
 }
 
+#initialStateFlex2{
+    display:flex;
+    flex-direction:row;
+    margin: 25px 200px 25px 200px;
+}
+
+.initialStateFlex2Item{
+    flex-grow: 1;
+}
+
+/*TRANSLATE PAGE STYLES*/
+
 #translateStateFlex{
     display: flex;
     flex-direction: row;
@@ -111,6 +160,19 @@ body{
     padding: 50px;
     width: 0px;
 }
+
+textarea{
+    border: 0;
+    padding: 15px;
+    background-color: #D2C8D8;
+    box-sizing: border-box;
+}
+
+textarea:focus{
+    outline: 0;
+}
+
+/*LEARN PAGE STYLES*/
 
 #learnStateFlex{
     display: flex;
@@ -127,47 +189,6 @@ body{
     border-radius: 6px;
 }
 
-textarea{
-    border: 0;
-    padding: 15px;
-    background-color: #D2C8D8;
-    box-sizing: border-box;
-}
-
-textarea:focus{
-    outline: 0;
-}
-
-.subButton{
-    display: inline-block;
-    padding: 10px 25px 10px 25px;
-    box-sizing: border-box;
-    background-color: #2A0C3A;
-    border-radius: 4px;
-    transition: border .25s;
-    text-align: center;
-    color: white;
-}
-
-.subButton:hover{
-    cursor: pointer;
-    background-color: #401D53;
-}
-
-.subButton:active{
-    transform: translateY(3px);
-}
-.section-heading{
-    text-align:center;
-    color:black;
-}
-#initialStateFlex2{
-    display:flex;
-    flex-direction:row;
-}
-.initialStateFlex2Item{
-    padding:25px;
-}
 .circle{
     height:150px;
     width:150px;
@@ -175,10 +196,12 @@ textarea:focus{
     margin-top: 50px;
     display: inline-block;
 }
+
 .circle:hover{
     cursor: pointer;
     opacity: .75;
 }
+
 .bottom{
     background-color: #D2C8D8;
     border-top: 20px solid #78375C;
