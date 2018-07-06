@@ -208,8 +208,10 @@ document.getElementById("redInput").addEventListener('keypress', function (e) {
         gameListener(document.getElementById("redInput").value, "red")
     }
 });
+
 //AUDIO STUFF
 // var audio = new Audio('../assets/Morse_Dot.wav');
 // audio.play();
 
 //for dash just change dot to dash in file 
+
