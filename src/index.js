@@ -133,8 +133,6 @@ function addText(message) {
     var sent = "<p class='chat-message'>" + message + "</p>";
     var style = "<div class='chat self'>" + sent + "</div>"
 
-
-
     $(".chatlogs").append(style);
     var roboMessage = translateEnglishToMorse(chatBot[genRan(chatBot.length - 1)]);
     var roboSent = "<p class='chat-message'>" + roboMessage + "</p>";
@@ -143,8 +141,6 @@ function addText(message) {
     $(".chatlogs").append(roboStyle);
 
     soloMessage.value = "";
-
-
 }
 
 function genRan(max) {
@@ -198,7 +194,11 @@ document.getElementById("subLearnButton").addEventListener("click", function () 
 document.getElementById("subTranslateButton").addEventListener("click", function () { changeState("translateState") });
 document.getElementById("subMessageButton").addEventListener("click", function () { changeState("messageState") });
 
-document.getElementById("Sender").addEventListener("click", function () { addText(document.getElementById("message").value) })
+document.getElementById("message").addEventListener("keypress", function (e) { 
+    var key = e.which || e.keyCode;
+    if(key == 13){
+    addText(document.getElementById("message").value) }
+});
 
 document.getElementById("green").addEventListener("click", function () { changeState("greenState"); });
 document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState") });
