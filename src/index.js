@@ -56,7 +56,7 @@ const translateEnglishToMorse = (input) => {
     try {
         input.toLowerCase().split("", input.length).forEach(function (element) {
             if (morseCode[element]) {
-                result += morseCode[element] + "   ";
+                result += morseCode[element] + " ";
             } else if (element === " ") {
                 result += "        ";
             } else if (numberHelper[element]) {
@@ -103,42 +103,12 @@ const translateMorseToEnglish = (input) => {
     let morseArray = [];
     let currentChar = "";
     try {
-        for (let i = 0; i < input.toString().length; i++) {
-            let element = input.toString().charAt(i);
-            if (element == "/" && input.toString().charAt(i + 1) == " ") {
-                morseArray.push("space ");
-                i++;
-            } else {
-                if (element == "." || element == "-") {
-                    currentChar += element;
-                } else if (element == " ") {
-                    morseArray.push(currentChar);
-                    currentChar = "";
-                } else {
-                    throw "Character is not morse/does not follow input guide";
-                }
-            }
-        }
-        morseArray.push(currentChar);
+        input.toString().split(" ", input.length).forEach( function (e) {
+            result += Object.keys(morseCode).find(key => morseCode[key] === e);
+        });
     } catch (err) {
         result = "Error: invalid character. " + err;
     }
-    morseArray.forEach(function (element) {
-        let newElement = "";
-        for (let i = 0; i < element.length; i++) {
-
-            if (element[i] !== "s") {
-                newElement += element.toString().charAt(i) + " ";
-            } else if (element[i] === "s") {
-                result += " ";
-                newElement += element.toString().substring(i, i + 5) + " ";
-                i += 6;
-            } else {
-                throw "ERROR";
-            }
-        }
-        result += Object.keys(morseCode).find(key => morseCode[key] === newElement);
-    });
     return result;
 }
 
