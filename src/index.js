@@ -123,9 +123,27 @@ function addText(message) {
   
     $(".chatlogs").append(style);
     soloMessage.value = "";
-
-    
 }
+
+function translatePage() {
+    const input = document.getElementById("translateInput").value;
+    let result;
+    if (input.charAt(0) == "." || input.charAt(0) == "-") {
+        try {
+            result = translateMorseToEnglish(input);
+        } catch (err) {
+            result = "Unable to translate morse to english, check formatting";
+        }
+    } else {
+        try {
+            result = translateEnglishToMorse(input);
+        } catch (err) {
+            result = "Unabled to translate english to morse";
+        }
+    }
+    document.getElementById("translateOutput").value = result;
+}
+
 document.getElementById("initialButton").addEventListener("click", function() {changeState("initialState")});
 document.getElementById("learnButton").addEventListener("click", function () { changeState("learnState") });
 document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
@@ -140,3 +158,5 @@ document.getElementById("Sender").addEventListener("click", function() { addText
 document.getElementById("green").addEventListener("click", function() { changeState("greenState"); });
 document.getElementById("yellow").addEventListener("click", function() { changeState("yellowState") });
 document.getElementById("red").addEventListener("click", function() { changeState("redState") });
+
+document.getElementById("translateInput").addEventListener("keyup", translatePage);
