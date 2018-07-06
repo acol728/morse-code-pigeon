@@ -131,6 +131,10 @@ document.getElementById("learnButton").addEventListener("click", function () { c
 document.getElementById("translateButton").addEventListener("click", function () { changeState("translateState") });
 document.getElementById("messageButton").addEventListener("click", function () { changeState("messageState") });
 
+document.getElementById("subLearnButton").addEventListener("click", function () { changeState("learnState") });
+document.getElementById("subTranslateButton").addEventListener("click", function () { changeState("translateState") });
+document.getElementById("subMessageButton").addEventListener("click", function () { changeState("messageState") });
+
 document.getElementById("Sender").addEventListener("click", function() { addText(document.getElementById("message").value)})
 
 document.getElementById("green").addEventListener("click", function() { changeState("greenState"); });

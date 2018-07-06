@@ -1,40 +1,126 @@
+@font-face{
+    src: url('../assets/sweet_easy/sweetEasy.ttf');
+    font-family: sweetEasy;
+}
+@font-face{
+    src: url('../assets/night_still_comes/NightStillComes_mine_final_sample.otf');
+    font-family: night
+}
 body{
     color: #fff;
-    font-family: Impact;
+    font-family: night;
     background-color: rgb(231, 231, 231);
 }
 #container{
-    display:grid;
-    grid-template-areas:
-    "top"
-    "flex"
-    "."
-    "footer";
-    height:100%; 
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
 }
-.top{
-    background-color: #9c9c9c;
-    grid-area:top;
-    font-size:5vh;
-    text-align:center;
-    margin-bottom: 1vh;
+
+/*Header bar styles*/
+#navBar{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: row;
+    height: 75px;
+    background-color: #2A0C3A;
+}
+#initialButton{
+    display: inline-block;
+    flex-grow: .75;
+    font-size: 16pt;
+    line-height: 75px;
+    padding-left: 50px;
+    font-family: sweetEasy;
+    background-color: #2A0C3A;
+    transition: background-color .25s;
+}
+#initialButton:hover{
+    background-color: #401D53;
     cursor: pointer;
 }
-.buttons{
-    font-size:40px;
-    text-align:center;
-    padding:3vh;
-    flex-grow:1;
-    background-color: #00a9ed;
+#emptySpace{
+    flex-grow: 1.5;
+}
+#navButtons{
+    flex-grow: 1.5;
+    display: flex;
+    flex-direction: row;
+}
+.navButton{
+    flex-grow: 1;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 75px;
+    background-color: #2A0C3A;
+    border-bottom: 0px solid #78375C;
+    transition: border .25s, background-color .25s;
+}
+.navButton:hover{
+    border-bottom: 7px solid #78375C;
+    cursor: pointer;
+    background-color: #401D53;
+}
+/*end header*/
 
+#stateContainer{
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.buttons:hover {
-  
-    background-color: #fff;
-    color: #00a9ed;
-    cursor: pointer;
+#boxOne, #boxTwo{
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+}
 
+#boxTwo{
+    background-color: #D2C8D8;
+    border-top: 20px solid #78375C;
+}
+
+#initialStateFlex{
+    display: flex;
+    flex-direction: row;
+}
+
+.initialStateFlexItem{
+    width: 0px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: background-color .5s;
+}
+
+.initialStateFlexItem:hover{
+    background-color: #A895B3;
+}
+
+.subButton{
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    background-color: #2A0C3A;
+    border-radius: 4px;
+    transition: border .25s;
+    text-align: center;
+    color: white;
+}
+
+.subButton:hover{
+    cursor: pointer;
+    background-color: #401D53;
+}
+
+.subButton:active{
+    transform: translateY(5px);
 }
 
 .learn{
@@ -57,14 +143,12 @@ body{
     left:10px;
     position: absolute;
     top:20vh;
-    bottom:10vh;
     background-color: #fff;
 
 }
 .flex{
     display:flex;
     grid-area:flex;
-    margin-bottom:20px;
     border: 4px #00a9ed solid;
 }
 .learnsection{
