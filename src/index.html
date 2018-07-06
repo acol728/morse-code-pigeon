@@ -86,7 +86,7 @@
           <div class="column-2 column-learning">
             <h3>Intermediate</h3>
             <p>We will display a Morse Code WORD on the screen and you have to enter its English equivalent.
-              <div class="circle" id="yellow" style="background-color:yellow; margin-top:35px"></div>
+              <div class="circle" id="yellow" style="background-color:yellow;"></div>
             </p>
           </div>
           <div class="column-3 column-learning">
@@ -100,20 +100,61 @@
         <div class="bottom"></div>
       </div>
 
-      <div class="state" id="greenState" style="display: none">
-        <h2>Green State</h2>
-      
-        <div class="bottom"></div>
+      <div class="state" id="greenState" style="display: none; color: black; text-align:center">
+        <h1 style="font-size:32; color:green">Beginner</h1>
+        <h2>Use the answer box to enter the English letter represented by the Morse Code example given.</h2>
+        <div>
+          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+            <h3>Morse Code:</h3>
+            <h4 id="greenmorse">.</h4>
+          </div>
+          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+            <h3>Enter its English Equivalent:</h3>
+            <input id="greenInput" type="text">
+            <h4 id="greenResultMessage"></h4>
+          </div>
+          <h3>Score:
+            <span id="greenScore">0</span>
+          </h3>
+        </div>
       </div>
 
-      <div class="state" id="yellowState" style="display: none">
-        <h2>Yellow State</h2>
-        <div class="bottom"></div>
+      <div class="state" id="yellowState" style="display: none; color: black; text-align:center">
+        <h1 style="font-size:32; color:yellow">Intermediate</h1>
+        <h2>Use the answer box to enter the English word represented by the Morse Code example given.</h2>
+        <div>
+          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+            <h3>Morse Code:</h3>
+            <h4 id="yellowmorse">.</h4>
+          </div>
+          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+            <h3>Enter its English Equivalent:</h3>
+            <input id="yellowInput" type="text">
+            <h4 id="yellowResultMessage"></h4>
+          </div>
+          <h3>Score:
+            <span id="yellowScore">0</span>
+          </h3>
+        </div>
       </div>
 
-      <div class="state" id="redState" style="display: none">
-        <h2>Red State</h2>
-        <div class="bottom"></div>
+      <div class="state" id="redState" style="display: none; color: black; text-align:center">
+        <h1 style="font-size:32; color:red">Intermediate</h1>
+        <h2>Use the answer box to enter the English sentence represented by the Morse Code example given.</h2>
+        <div>
+          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+            <h3>Morse Code:</h3>
+            <h4 id="redmorse">.</h4>
+          </div>
+          <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
+            <h3>Enter its English Equivalent:</h3>
+            <input id="redInput" type="text">
+            <h4 id="redResultMessage"></h4>
+          </div>
+          <h3>Score:
+            <span id="redScore">0</span>
+          </h3>
+        </div>
       </div>
 
       <div class="state" id="translateState" style="display: none">
