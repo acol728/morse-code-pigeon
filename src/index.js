@@ -67,28 +67,20 @@ const translateEnglishToMorse = (input) => {
                 throw "Character is not translatable to Morse Code";
             }
             var resultArray = result.trim().split("");
-            for(var i = 0; i < resultArray.length; i++){
-                (function(i){
-    
-                    window.setTimeout(function(){
-                      sound(resultArray[i]);
-                    }, i * 80);
-                
-                  }(i));
-    
+          if(soundOn){
+            for (var i = 0; i < resultArray.length; i++) {
+                (function (i) {
+
+                    window.setTimeout(function () {
+                        sound(resultArray[i]);
+                    }, i * 300);
+
+                }(i));
+
             }
+          }
         });
-        var resultArray = result.trim().split("");
 
-        for (var i = 0; i < resultArray.length; i++) {
-            (function (i) {
-
-                window.setTimeout(function () {
-                    sound(resultArray[i]);
-                }, i * 250);
-
-            }(i));
-        }
     } catch (err) {
         result = "Error: invalid character. " + err;
     }
@@ -112,22 +104,22 @@ function sound(element) {
 
 const translateMorseToEnglish = (input) => {
     let result = "";
-    let morseArray = [];
-    let currentChar = "";
     var resultArray = input.trim().split("");
-            for(var i = 0; i < resultArray.length; i++){
-                (function(i){
-    
-                    window.setTimeout(function(){
-                      sound(resultArray[i]);
-                    }, i * 200);
-                
-                  }(i));
-    
-            }
+    if(soundOn){
+    for (var i = 0; i < resultArray.length; i++) {
+        (function (i) {
+
+            window.setTimeout(function () {
+                sound(resultArray[i]);
+            }, i * 300);
+
+        }(i));
+
+    }
+    }
     try {
 
-        input.toString().split(" ", input.length).forEach( function (e) {
+        input.toString().split(" ", input.length).forEach(function (e) {
             result += Object.keys(morseCode).find(key => morseCode[key] === e);
         });
 
