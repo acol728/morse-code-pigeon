@@ -1,3 +1,5 @@
+let soundOn = true;
+
 const morseCode = {
     "zero": "-----",
     "one": ".----",
@@ -52,7 +54,7 @@ const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "sev
 
 const translateEnglishToMorse = (input) => {
     let result = "";
-    
+
     try {
         input.toLowerCase().split("", input.length).forEach(function (element) {
             if (morseCode[element]) {
@@ -66,15 +68,15 @@ const translateEnglishToMorse = (input) => {
             }
         });
         var resultArray = result.trim().split("");
-        
-        for(var i = 0; i < resultArray.length; i++){
-            (function(i){
 
-                window.setTimeout(function(){
-                  sound(resultArray[i]);
+        for (var i = 0; i < resultArray.length; i++) {
+            (function (i) {
+
+                window.setTimeout(function () {
+                    sound(resultArray[i]);
                 }, i * 250);
-            
-              }(i));
+
+            }(i));
 
         }
     } catch (err) {
@@ -84,18 +86,18 @@ const translateEnglishToMorse = (input) => {
 }
 
 
-function sound(element){
-    
+function sound(element) {
+
     var audio = new Audio('../assets/Morse_Dot.wav');
     var newAudio = new Audio('../assets/Morse_Dash.wav');
 
-    if(element === "."){
-        audio.play(); 
-        
-    }else if(element === "-"){
-        newAudio.play();  
+    if (element === ".") {
+        audio.play();
+
+    } else if (element === "-") {
+        newAudio.play();
     }
-    
+
 }
 
 const translateMorseToEnglish = (input) => {
@@ -213,7 +215,7 @@ function gameListener(userInput, color) {
         setTimeout(function () {
             document.getElementById(color + "ResultMessage").innerHTML = "";
             document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D2C8D8";
-    }, 750);
+        }, 750);
     }
     else {
         document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D41616";
@@ -222,6 +224,17 @@ function gameListener(userInput, color) {
             document.getElementById(color + "ResultMessage").innerHTML = "";
             document.getElementById(color + 'AnswerBox').style.backgroundColor = "#D2C8D8";
         }, 750);
+    }
+}
+
+function handleSound() {
+    const obj = document.getElementById("soundIcon");
+    if (soundOn) {
+        obj.style.backgroundImage = "url('../assets/soundIconOff.png')";
+        soundOn = false;
+    } else {
+        obj.style.backgroundImage = "url('../assets/soundIcon.png')";
+        soundOn = true;
     }
 }
 
@@ -236,6 +249,8 @@ document.getElementById("subMessageButton").addEventListener("click", function (
 
 document.getElementById("translateInput").addEventListener("keyup", translateText);
 
+document.getElementById("soundIcon").addEventListener("click", handleSound);
+
 document.getElementById("message").addEventListener("keypress", function (e) {
     var key = e.which || e.keyCode;
     if (key == 13) {
@@ -243,9 +258,9 @@ document.getElementById("message").addEventListener("keypress", function (e) {
     }
 });
 
-document.getElementById("green").addEventListener("click", function () { changeState("greenState"); document.getElementById('greenScore').innerHTML = 0;});
-document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState"); document.getElementById('yellowScore').innerHTML = 0;});
-document.getElementById("red").addEventListener("click", function () { changeState("redState"); document.getElementById('redScore').innerHTML = 0;});
+document.getElementById("green").addEventListener("click", function () { changeState("greenState"); document.getElementById('greenScore').innerHTML = 0; });
+document.getElementById("yellow").addEventListener("click", function () { changeState("yellowState"); document.getElementById('yellowScore').innerHTML = 0; });
+document.getElementById("red").addEventListener("click", function () { changeState("redState"); document.getElementById('redScore').innerHTML = 0; });
 
 document.getElementById("greenInput").addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
