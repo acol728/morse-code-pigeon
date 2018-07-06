@@ -44,7 +44,7 @@ const morseCode = {
     "@": ". - - . - . ",
     "(": "- . - - . ",
     ")": "- . - - . - ",
-    " ": "space"
+    " ": "space "
 }
 
 const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
@@ -69,41 +69,48 @@ const translateEnglishToMorse = (input) => {
     return result;
 }
 
-// const translateMorseToEnglish = (input) => {
-//     let result = "";
-//     let morseArray = [];
-//     let currentChar = "";
-//     try {
-//         input.toString().split("", input.length).forEach(function (element) {
-//             if (element == "." || element == "-") {
-//                 currentChar += element;
-//             } else if (element == " ") {
-//                 morseArray.push(currentChar);
-//                 currentChar = "";
-//             } else if (element == "/") {
-//                 morseArray.push("space");
-//                 currentChar = "";
-//             } else {
-//                 throw "Character is not morse/does not follow input guide";
-//             }
-//         });
-//         morseArray.push(currentChar);
-//     } catch (err) {
-//         result = "Error: invalid character. " + err;
-//     }
-//     morseArray.forEach(function (element) {
-//         let newElement = "";
-//         for (let i = 0; i < element.length; i++) {
-//             if (element[i] !== " " && element[i] !== "/") {
-//                 newElement += element.toString().charAt(i) + " ";
-//             } else if (element[i] === "/") {
-//                 newElement += " ";
-//             }
-//         }
-//         result += Object.keys(morseCode).find(key => morseCode[key] === newElement);
-//     });
-//     return result;
-// }
+const translateMorseToEnglish = (input) => {
+    let result = "";
+    let morseArray = [];
+    let currentChar = "";
+    try {
+        for (let i = 0; i < input.toString().length; i++) {
+            let element = input.toString().charAt(i);
+            if (element == "/" && input.toString().charAt(i+1) == " ") {
+                morseArray.push("space ");
+                i++;
+            } else {
+                if (element == "." || element == "-") {
+                    currentChar += element;
+                } else if (element == " ") {
+                    morseArray.push(currentChar);
+                    currentChar = "";
+                } else {
+                    throw "Character is not morse/does not follow input guide";
+                }
+            }
+        }
+        morseArray.push(currentChar);
+    } catch (err) {
+        result = "Error: invalid character. " + err;
+    }
+    morseArray.forEach(function (element) {
+        let newElement = "";
+        for (let i = 0; i < element.length; i++) {
+
+            if (element[i] !== "s") {
+                newElement += element.toString().charAt(i) + " ";
+            } else if (element[i] === "s") {
+                newElement += element.toString().substring(i, i + 5) + " ";
+                i += 6;
+            } else {
+                throw "ERROR";
+            }
+        }
+        result += Object.keys(morseCode).find(key => morseCode[key] === newElement);
+    });
+    return result;
+}
 
 const greenGame = [". - ", "- . . . ", "- . - . "];
 const yellowGame = [". - ", "- . . . ", "- . - . "];
