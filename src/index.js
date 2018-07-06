@@ -51,6 +51,8 @@ const morseCode = {
 }
 
 const numberHelper = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const dotAudio = new Audio('../assets/Morse_Dot.wav');
+const dashAudio = new Audio('../assets/Morse_Dash.wav');
 
 const translateEnglishToMorse = (input) => {
     let result = "";
@@ -67,7 +69,6 @@ const translateEnglishToMorse = (input) => {
                 throw "Character is not translatable to Morse Code";
             }
             var resultArray = result.trim().split("");
-          if(soundOn){
             for (var i = 0; i < resultArray.length; i++) {
                 (function (i) {
 
@@ -78,7 +79,6 @@ const translateEnglishToMorse = (input) => {
                 }(i));
 
             }
-          }
         });
 
     } catch (err) {
@@ -89,23 +89,18 @@ const translateEnglishToMorse = (input) => {
 
 
 function sound(element) {
-
-    var audio = new Audio('../assets/Morse_Dot.wav');
-    var newAudio = new Audio('../assets/Morse_Dash.wav');
-
-    if (element === ".") {
-        audio.play();
-
-    } else if (element === "-") {
-        newAudio.play();
+    if (soundOn) {
+        if (element === ".") {
+            dotAudio.play();
+        } else if (element === "-") {
+            dashAudio.play();
+        }
     }
-
 }
 
 const translateMorseToEnglish = (input) => {
     let result = "";
     var resultArray = input.trim().split("");
-    if(soundOn){
     for (var i = 0; i < resultArray.length; i++) {
         (function (i) {
 
@@ -115,7 +110,6 @@ const translateMorseToEnglish = (input) => {
 
         }(i));
 
-    }
     }
     try {
 
