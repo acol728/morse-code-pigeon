@@ -40,8 +40,7 @@
               <h3>Example: "Hello World" in Morse Code is ".... . .-.. .-.. ---/.-- --- .-. .-.. -.."</h3>
             </div>
             <div class="initial-class-item">
-              <img src="https://files.slack.com/files-pri/TAY65C0G0-FBK8TDU9J/1200px-international_morse_code.svg__1_.png" alt="morse code key"
-                height="350px" width="300px">
+              <img src="../assets/morsechart.png" alt="morse code key" height="350px" width="300px">
             </div>
           </div>
         </div>
@@ -59,7 +58,7 @@
             <div class="initialStateFlexItem">
               <center>
                 <h3>Translate Code</h3>
-                <p>Use our translater to get from english to morse code or morse code to english and hear how it sounds!</p>
+                <p>Use our translator to get from english to morse code or morse code to english and hear how it sounds!</p>
                 <div class="subButton" id="subTranslateButton">Translate</div>
               </center>
             </div>
@@ -91,11 +90,11 @@
           </div>
           <div class="column-3 column-learning">
             <h3>Hard</h3>
-            <p>We will display a Morse Code SENTENCE on the screen and you have to enter its English equivalent.
+            <p>We will display a Morse Code PHRASE on the screen and you have to enter its English equivalent.
               <div class="circle" id="red" style="background-color:red;"></div>
             </p>
           </div>
-         
+
         </div>
         <div class="bottom"></div>
       </div>
@@ -104,9 +103,15 @@
         <h1 style="font-size:32; color:green">Beginner</h1>
         <h2>Use the answer box to enter the English letter represented by the Morse Code example given.</h2>
         <div>
+          <div style="display:block; float:right">
+            <img src="../assets/morsechart.png" alt="morse code key" height="350px" width="300px">
+          </div>
+          <div style="display:block; float:left">
+            <img src="../assets/morsechart.png" alt="morse code key" height="350px" width="300px">
+          </div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
             <h3>Morse Code:</h3>
-            <h4 id="greenmorse">.</h4>
+            <h4 id="greenmorse">.-</h4>
           </div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
             <h3>Enter its English Equivalent:</h3>
@@ -126,7 +131,7 @@
         <div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
             <h3>Morse Code:</h3>
-            <h4 id="yellowmorse">.</h4>
+            <h4 id="yellowmorse">.... . .-.. .-.. ---</h4>
           </div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
             <h3>Enter its English Equivalent:</h3>
@@ -142,11 +147,11 @@
 
       <div class="state" id="redState" style="display: none; color: black; text-align:center">
         <h1 style="font-size:32; color:red">Intermediate</h1>
-        <h2>Use the answer box to enter the English sentence represented by the Morse Code example given.</h2>
+        <h2>Use the answer box to enter the English phrase represented by the Morse Code example given.</h2>
         <div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
             <h3>Morse Code:</h3>
-            <h4 id="redmorse">.</h4>
+            <h4 id="redmorse">.... . .-.. .-.. --- space .-- --- .-. .-.. -..</h4>
           </div>
           <div style="margin: 50px 25%; border:1px black solid; color:black; text-align: center; font-size:24; padding:30px">
             <h3>Enter its English Equivalent:</h3>
@@ -160,59 +165,37 @@
         </div>
       </div>
 
-      <div class="state" id="translateState" style="display: none">
-        <h2 class="section-heading">Translate Between English and Morse Code</h2>
-        <div id="translate-flex">
-          <textarea class="translate-item" placeholder="Enter English to translate to Morse Code" cols="45" rows="20" style="font-size:20px; resize: none;"></textarea>
-          <img class="translate-item " src="http://sweetclipart.com/multisite/sweetclipart/files/arrows_back_forward.png" alt="arrows "
-            height="100px " width="200px ">
-          <textarea class="translate-item" placeholder="Enter Morse Code to translate to English" cols="45 " rows="20
-          " style="font-size:20px; resize: none;"></textarea>
+      <div class="state" id="translateState" style="display: none;">
+        <div id="boxOne">
+          <h1 class="section-heading">Translate Between English and Morse Code</h1>
+          <div id="translateStateFlex">
+            <div class="translateStateFlexItem">
+              <textarea id="translateInput" placeholder="Enter english or morse to translate" cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%;"></textarea>
+            </div>
+            <div class="translateStateFlexItem">
+              <textarea id="translateOutput" readonly placeholder="Output..." cols="45 " rows="10" style="font-size:20px; resize: none; width: 100%;"></textarea>
+            </div>
+          </div>
         </div>
         <div class="bottom"></div>
       </div>
 
-
       <div class="state" id="messageState" style="display: none">
+
         <div class="chatbox">
           <div class="chatlogs">
-
             <div class="chat friend">
-
-              <p class="chat-message">What's up, Brother ..!!</p>
-            </div>
-            <div class="chat self">
-
-              <p class="chat-message">What's up ..!!</p>
-            </div>
-            <div class="chat self">
-
-              <p class="chat-message">I love morse Code</p>
-            </div>
-            <div class="chat friend">
-
-              <p class="chat-message">Me to brother</p>
-            </div>
-            <div class="chat self">
-              <p class="chat-message">.</p>
-            </div>
-            <div class="chat friend">
-              <p class="chat-message">.</p>
+              <p class="chat-message">.... . .-.. .-.. ---, I am Chatbot.</p>
             </div>
           </div>
           <div class="chat-form">
             <textarea id="message"></textarea>
-            <button id="Sender">Send</button>
           </div>
-          
         </div>
         <div class="bottom"></div>
       </div>
     </div>
   </div>
-
-
-
   <script src="index.js "></script>
 </body>
 
