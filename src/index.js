@@ -61,7 +61,7 @@ const translateEnglishToMorse = (input) => {
             } else if (numberHelper[element]) {
                 result += morseCode[numberHelper[element]] + "   ";
             } else {
-                throw "Character is not translatable to morse";
+                throw "Character is not translatable to Morse Code";
             }
         });
     } catch (err) {
