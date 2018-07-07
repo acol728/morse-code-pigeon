@@ -153,15 +153,28 @@ const yellowGame = ["hello", "test", "cat", "dog", "what", "soda", "pizza", "gam
 const redGame = ["hello world", "morse code pigeon", "this is fun", "how are you", "i like food", "look for it", "it is summer", "common letters"];
 const chatBot = ["adam is goofy", "Hello there human", "I am sentient", "I can see you", "I am chatBot", "What is Up my Brother!"];
 
+let currentState = "initialState";
 
-function changeState(state) {
-    var states = document.getElementsByClassName("state")
-    for (var i = 0; i < states.length; i++) {
-        document.getElementById(states[i].id).style.display = "none";
+window.history.pushState(currentState, currentState, null);
+
+function changeState(state, history = true) {
+    if (state !== currentState) {
+        document.getElementById(currentState).style.display = "none";
+        document.getElementById(state).style.display = "block";
+
+        if (history) {
+            window.history.pushState(state, state, null);
+        }
+
+        currentState = state;
     }
-    document.getElementById(state).style.display = "block";
 }
 
+window.addEventListener('popstate', function(e) {
+    if (e.state != null) {
+        changeState(e.state, false);
+    }
+});
 
 function addText(message) {
     var soloMessage = document.getElementById("message");
